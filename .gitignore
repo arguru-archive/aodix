@@ -1,0 +1,9 @@
+*.aps
+*.suo
+*.ncb
+*/Debug/*
+*/Release/*
+/AsioSdk2/*
+!/AsioSdk2/README
+/VstSdk2.3/*
+!/VstSdk2.3/README
