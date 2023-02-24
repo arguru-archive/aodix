@@ -1,6 +1,7 @@
 *.aps
 *.suo
 *.ncb
+*.res
 */Debug/*
 */Release/*
 /AsioSdk2/*
