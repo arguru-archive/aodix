@@ -42,8 +42,12 @@
 #define IDC_USER_NAME_EDIT              1026
 #define IDC_LICENSE_KEY_NAME            1027
 #define IDC_LICENSE_KEY_EDIT            1027
+#define IDC_AUTOLINK_CHECK              1027
 #define IDC_CHECK_MIDI_VL_ROUT          1028
 #define IDC_CHECK_MIDI_IN_OPEN          1029
+#define IDC_SKIN_PATH_EDIT              1030
+#define IDC_SKIN_PATH_BUTTON            1031
+#define IDC_FULLSCREEN_CHECK            1032
 #define ID_FILE_NEW40001                40001
 #define ID_FILE_OPEN40002               40002
 #define ID_FILE_SAVEAS                  40003
@@ -72,6 +76,7 @@
 #define ID_FILE_RECENTFILE4             40043
 #define ID_FILE_IMPORT                  40044
 #define ID_IMPORT_WAVEFILE              40045
+#define ID_EDIT_INTERPOLATE             40046
 
 // Next default values for new objects
 // 

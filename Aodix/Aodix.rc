@@ -78,7 +78,8 @@ BEGIN
         MENUITEM "Select All\tCtrl+A",          ID_EDIT_SELECTALL
         MENUITEM SEPARATOR
         MENUITEM "Quantize Notes\tCtrl+Q",      ID_EDIT_QUANTIZENOTES
-        MENUITEM "Randomize\tCtrl+R",           ID_EDIT_RANDOMIZE
+        MENUITEM "Randomize Data\tCtrl+R",      ID_EDIT_RANDOMIZE
+        MENUITEM "Interpolate Data\tCtrl+I",    ID_EDIT_INTERPOLATE
     END
     POPUP "&Help"
     BEGIN
@@ -96,22 +97,21 @@ END
 // Dialog
 //
 
-IDD_ABOUTBOX DIALOGEX 22, 17, 236, 106
+IDD_ABOUTBOX DIALOGEX 22, 17, 208, 79
 STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_TOOLWINDOW
 CAPTION "Aodix - About"
 FONT 8, "Tahoma", 400, 0, 0x0
 BEGIN
-    GROUPBOX        "",IDC_STATIC,4,0,228,104
-    CTEXT           "Arguru Software Aodix",IDC_STATIC,8,8,220,12,
+    GROUPBOX        "",IDC_STATIC,4,0,200,76
+    CTEXT           "Arguru Software Aodix",IDC_STATIC,8,8,192,12,
                     SS_CENTERIMAGE,WS_EX_STATICEDGE
-    CTEXT           "Concept && Code : Juan Antonio Arguelles Rius",
-                    IDC_STATIC,8,24,220,12,SS_CENTERIMAGE
-    CTEXT           "Adviser, Testing and Webmaster: Zafer Kantar",
-                    IDC_STATIC,8,56,220,12,SS_CENTERIMAGE
-    CTEXT           "Additional Graphics: Marc De Haar",IDC_STATIC,8,40,220,
-                    12,SS_CENTERIMAGE
-    ICON            IDI_AODIX,IDC_STATIC,107,76,21,20
+    CTEXT           "By Juan Antonio Arguelles Rius && Zafer Kantar",
+                    IDC_STATIC,8,24,192,8,SS_CENTERIMAGE
+    CTEXT           "Graphics: Paul Merchant && Marc De Haar",IDC_STATIC,8,36,192,8,
+                    SS_CENTERIMAGE
+    ICON            IDI_AODIX,IDC_STATIC,93,52,20,20
+    CONTROL         "",IDC_STATIC,"STATIC",SS_BLACKFRAME,8,48,192,1,WS_EX_STATICEDGE
 END
 
 IDD_BOUNCE DIALOGEX 0, 0, 256, 154
@@ -164,7 +164,7 @@ BEGIN
     CTEXT           "VST Path 4",IDC_STATIC,8,168,64,12,SS_CENTERIMAGE
     EDITTEXT        IDC_VST_PATH_EDIT4,72,168,172,12,ES_AUTOHSCROLL
     PUSHBUTTON      "...",IDC_VST_PATH_BUTTON4,248,168,16,12
-    GROUPBOX        "",IDC_STATIC,272,0,264,40
+    GROUPBOX        "",IDC_STATIC,272,0,264,72
     CTEXT           "Keyboard Layout",IDC_STATIC,276,24,64,12,SS_CENTERIMAGE
     COMBOBOX        IDC_KBD_LAYOUT_COMBO,340,24,192,60,CBS_DROPDOWNLIST | 
                     WS_VSCROLL | WS_TABSTOP
@@ -176,21 +176,21 @@ BEGIN
     COMBOBOX        IDC_ASIO_RATE_COMBO,72,80,128,188,CBS_DROPDOWNLIST | 
                     WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Control Panel...",IDC_ASIO_CONTROL_PANEL,204,80,60,12
-    GROUPBOX        "",IDC_STATIC,272,40,264,144
-    LISTBOX         IDC_MIDI_IN_LIST,276,64,256,68,LBS_NOINTEGRALHEIGHT | 
+    GROUPBOX        "",IDC_STATIC,272,72,264,112
+    LISTBOX         IDC_MIDI_IN_LIST,276,96,256,52,LBS_NOINTEGRALHEIGHT | 
                     WS_VSCROLL | WS_TABSTOP
     CONTROL         "Override Channel Messages",IDC_CHECK_MIDI_CH_ROUT,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,276,136,256,12
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,404,152,128,12
     DEFPUSHBUTTON   "Apply Changes",IDC_APPLY_BUTTON,4,188,128,12
     PUSHBUTTON      "Cancel",IDC_CANCEL_BUTTON,136,188,128,12
     GROUPBOX        "",IDC_STATIC,4,0,264,40
     CTEXT           "User Name",IDC_STATIC,8,24,64,12,SS_CENTERIMAGE
     EDITTEXT        IDC_USER_NAME_EDIT,72,24,192,12,ES_AUTOHSCROLL
-    CONTROL         "Override Note-On Velocity Messages",
+    CONTROL         "Override Note Velocity Messages",
                     IDC_CHECK_MIDI_VL_ROUT,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,276,152,256,12
+                    WS_TABSTOP,276,168,128,12
     CONTROL         "Open MIDI In Devices",IDC_CHECK_MIDI_IN_OPEN,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,276,168,256,12
+                    BS_AUTOCHECKBOX | WS_TABSTOP,276,152,128,12
     CTEXT           "User Information",IDC_STATIC,8,8,256,12,SS_CENTERIMAGE,
                     WS_EX_STATICEDGE
     CTEXT           "ASIO",IDC_STATIC,8,48,256,12,SS_CENTERIMAGE,
@@ -199,8 +199,18 @@ BEGIN
                     WS_EX_STATICEDGE
     CTEXT           "User Interface",IDC_STATIC,276,8,256,12,SS_CENTERIMAGE,
                     WS_EX_STATICEDGE
-    CTEXT           "MIDI Input",IDC_STATIC,276,48,256,12,SS_CENTERIMAGE,
+    CTEXT           "MIDI Input",IDC_STATIC,276,80,256,12,SS_CENTERIMAGE,
                     WS_EX_STATICEDGE
+    AUTOCHECKBOX    "Instance To Master Autolink",IDC_AUTOLINK_CHECK,
+                    276,56,128,12
+    CTEXT           "Skin Bitmaps Path *",IDC_STATIC,276,40,64,12,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_SKIN_PATH_EDIT,340,40,172,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_SKIN_PATH_BUTTON,516,40,16,12
+    AUTOCHECKBOX    "Run In Fullscreen Mode *",IDC_FULLSCREEN_CHECK,
+                    404,56,128,12
+    CTEXT           "* Changes Will Take Effect After Restarting Aodix",
+                    IDC_STATIC,272,188,260,12,SS_CENTERIMAGE
 END
 
 
