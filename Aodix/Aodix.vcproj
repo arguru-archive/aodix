@@ -33,6 +33,7 @@
 					MinimalRebuild="1"
 					BasicRuntimeChecks="3"
 					RuntimeLibrary="5"
+					AllOptions="/c  /ZI /nologo /W3 /Wp64 /Od /D &quot;WIN32&quot; /D &quot;_DEBUG&quot; /D &quot;_WINDOWS&quot; /D &quot;_MBCS&quot; /Gm /EHsc /RTC1 /MLd /Fo&quot;Debug/&quot; /Fd&quot;Debug/vc70.pdb&quot; /Gd /TP"
 					MSOriginalAdditionalOptions=""/>
 			</Tool>
 			<Tool 
@@ -98,6 +99,7 @@
 					FavorSizeOrSpeed="1"
 					OptimizeForProcessor="3"
 					RuntimeLibrary="4"
+					AllOptions="/c  /Zi /nologo /W3 /Wp64 /O2 /Ot /G7 /D &quot;WIN32&quot; /D &quot;NDEBUG&quot; /D &quot;_WINDOWS&quot; /D &quot;_MBCS&quot; /FD /EHsc /ML /Fo&quot;Release/&quot; /Fd&quot;Release/vc70.pdb&quot; /Gd /TP"
 					MSOriginalAdditionalOptions=""/>
 			</Tool>
 			<Tool 
@@ -174,12 +176,6 @@
 				RelativePath=".\AodixCoreGuiCommand.cpp">
 			</File>
 			<File 
-				RelativePath=".\AodixCoreGuiKey.cpp">
-			</File>
-			<File 
-				RelativePath=".\AodixCoreGuiMouse.cpp">
-			</File>
-			<File 
 				RelativePath=".\AodixCoreHost.cpp">
 			</File>
 			<File 
@@ -190,9 +186,6 @@
 			</File>
 			<File 
 				RelativePath=".\AodixCoreMidiIn.cpp">
-			</File>
-			<File 
-				RelativePath=".\AodixCorePaint.cpp">
 			</File>
 			<File 
 				RelativePath=".\AodixCoreSequencer.cpp">
@@ -234,6 +227,51 @@
 				</File>
 				<File 
 					RelativePath=".\AodixPlug.cpp">
+				</File>
+			</Filter>
+			<Filter 
+				Name="MouseInput"
+				Filter="">
+				<File 
+					RelativePath=".\AodixCoreGuiMouseDown.cpp">
+				</File>
+				<File 
+					RelativePath=".\AodixCoreGuiMouseMove.cpp">
+				</File>
+				<File 
+					RelativePath=".\AodixCoreGuiMousePin.cpp">
+				</File>
+				<File 
+					RelativePath=".\AodixCoreGuiMouseUp.cpp">
+				</File>
+				<File 
+					RelativePath=".\AodixCoreGuiMouseWheel.cpp">
+				</File>
+			</Filter>
+			<Filter 
+				Name="KeyInput"
+				Filter="">
+				<File 
+					RelativePath=".\AodixCoreGuiKeyDown.cpp">
+				</File>
+				<File 
+					RelativePath=".\AodixCoreGuiKeyPiano.cpp">
+				</File>
+				<File 
+					RelativePath=".\AodixCoreGuiKeyUp.cpp">
+				</File>
+			</Filter>
+			<Filter 
+				Name="Paint"
+				Filter="">
+				<File 
+					RelativePath=".\AodixCorePaint.cpp">
+				</File>
+				<File 
+					RelativePath=".\AodixCorePaintRouting.cpp">
+				</File>
+				<File 
+					RelativePath=".\AodixCorePaintSequencer.cpp">
 				</File>
 			</Filter>
 		</Filter>
