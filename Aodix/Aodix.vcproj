@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="Windows-1252"?>
-<VisualStudioProject
+<VisualStudioProject 
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="Aodix"
 	ProjectGUID="{DC0A40E2-53E6-458E-BBC3-D4BF55235157}"
 	Keyword="Win32Proj">
 	<Platforms>
-		<Platform
+		<Platform 
 			Name="Win32"/>
 	</Platforms>
 	<Configurations>
-		<Configuration
+		<Configuration 
 			Name="Debug|Win32"
 			OutputDirectory="Debug"
 			IntermediateDirectory="Debug"
 			ConfigurationType="1"
 			CharacterSet="2">
-			<Tool
+			<Tool 
 				Name="VCCLCompilerTool"
-				AdditionalOptions=""
 				Optimization="0"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				MinimalRebuild="TRUE"
@@ -27,50 +26,61 @@
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="4"/>
-			<Tool
+				DebugInformationFormat="4"
+				AdditionalOptions="">
+				<IntelOptions 
+					Optimization="0"
+					MinimalRebuild="1"
+					BasicRuntimeChecks="3"
+					RuntimeLibrary="5"
+					MSOriginalAdditionalOptions=""/>
+			</Tool>
+			<Tool 
 				Name="VCCustomBuildTool"/>
-			<Tool
+			<Tool 
 				Name="VCLinkerTool"
-				AdditionalOptions=""
 				AdditionalDependencies="winmm.lib htmlhelp.lib msimg32.lib"
-				OutputFile="C:/Aodix/Aodix.exe"
+				OutputFile="$(OutDir)/Aodix.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="TRUE"
 				GenerateDebugInformation="TRUE"
 				ProgramDatabaseFile="$(OutDir)/Aodix.pdb"
 				SubSystem="2"
-				TargetMachine="1"/>
-			<Tool
+				TargetMachine="1"
+				AdditionalOptions="">
+				<IntelOptions 
+					AllOptions="/NOLOGO /OUT:&quot;Debug/Aodix.exe&quot; /INCREMENTAL winmm.lib htmlhelp.lib msimg32.lib /DEBUG /PDB:&quot;Debug/Aodix.pdb&quot; /SUBSYSTEM:WINDOWS /TLBID:1 /MACHINE:IX86  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
+					MSOriginalAdditionalOptions=""/>
+			</Tool>
+			<Tool 
 				Name="VCMIDLTool"/>
-			<Tool
+			<Tool 
 				Name="VCPostBuildEventTool"/>
-			<Tool
+			<Tool 
 				Name="VCPreBuildEventTool"/>
-			<Tool
+			<Tool 
 				Name="VCPreLinkEventTool"/>
-			<Tool
+			<Tool 
 				Name="VCResourceCompilerTool"/>
-			<Tool
+			<Tool 
 				Name="VCWebServiceProxyGeneratorTool"/>
-			<Tool
+			<Tool 
 				Name="VCXMLDataGeneratorTool"/>
-			<Tool
+			<Tool 
 				Name="VCWebDeploymentTool"/>
-			<Tool
+			<Tool 
 				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
+			<Tool 
 				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
 		</Configuration>
-		<Configuration
+		<Configuration 
 			Name="Release|Win32"
 			OutputDirectory="Release"
 			IntermediateDirectory="Release"
 			ConfigurationType="1"
 			CharacterSet="2">
-			<Tool
+			<Tool 
 				Name="VCCLCompilerTool"
-				AdditionalOptions=""
 				Optimization="2"
 				ImproveFloatingPointConsistency="FALSE"
 				FavorSizeOrSpeed="1"
@@ -80,202 +90,215 @@
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="3"/>
-			<Tool
+				DebugInformationFormat="3"
+				AdditionalOptions="">
+				<IntelOptions 
+					Optimization="2"
+					ImproveFloatingPointConsistency="0"
+					FavorSizeOrSpeed="1"
+					OptimizeForProcessor="3"
+					RuntimeLibrary="4"
+					MSOriginalAdditionalOptions=""/>
+			</Tool>
+			<Tool 
 				Name="VCCustomBuildTool"/>
-			<Tool
+			<Tool 
 				Name="VCLinkerTool"
-				AdditionalOptions=""
 				AdditionalDependencies="winmm.lib htmlhelp.lib msimg32.lib"
-				OutputFile="C:/Aodix/Aodix.exe"
+				OutputFile="$(OutDir)/Aodix.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="TRUE"
 				GenerateDebugInformation="TRUE"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"/>
-			<Tool
+				TargetMachine="1"
+				AdditionalOptions="">
+				<IntelOptions 
+					AllOptions="/NOLOGO /OUT:&quot;Release/Aodix.exe&quot; /INCREMENTAL:NO winmm.lib htmlhelp.lib msimg32.lib /DEBUG /PDB:&quot;Release/Aodix.pdb&quot; /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /MACHINE:IX86  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
+					MSOriginalAdditionalOptions=""/>
+			</Tool>
+			<Tool 
 				Name="VCMIDLTool"/>
-			<Tool
+			<Tool 
 				Name="VCPostBuildEventTool"/>
-			<Tool
+			<Tool 
 				Name="VCPreBuildEventTool"/>
-			<Tool
+			<Tool 
 				Name="VCPreLinkEventTool"/>
-			<Tool
+			<Tool 
 				Name="VCResourceCompilerTool"
 				ShowProgress="TRUE"
 				ResourceOutputFileName="aodix.res"/>
-			<Tool
+			<Tool 
 				Name="VCWebServiceProxyGeneratorTool"/>
-			<Tool
+			<Tool 
 				Name="VCXMLDataGeneratorTool"/>
-			<Tool
+			<Tool 
 				Name="VCWebDeploymentTool"/>
-			<Tool
+			<Tool 
 				Name="VCManagedWrapperGeneratorTool"/>
-			<Tool
+			<Tool 
 				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
 		</Configuration>
 	</Configurations>
 	<References>
 	</References>
 	<Files>
-		<Filter
+		<Filter 
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
-			<File
+			<File 
 				RelativePath=".\Aodix.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCore.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreAsio.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreDsp.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreEdit.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreExport.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreGui.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreGuiCommand.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreGuiKey.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreGuiMouse.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreHost.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreImport.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreInstance.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreMidiIn.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCorePaint.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCoreSequencer.cpp">
 			</File>
-			<File
+			<File 
 				RelativePath="..\Argulib\Argulib.cpp">
 			</File>
-			<Filter
+			<Filter 
 				Name="DlgProcs"
 				Filter="">
-				<File
+				<File 
 					RelativePath=".\AodixAbout.cpp">
 				</File>
-				<File
+				<File 
 					RelativePath=".\AodixBounce.cpp">
 				</File>
-				<File
+				<File 
 					RelativePath=".\AodixConfig.cpp">
 				</File>
 			</Filter>
-			<Filter
+			<Filter 
 				Name="AsioSdk"
 				Filter="">
-				<File
+				<File 
 					RelativePath="..\AsioSdk2\common\asio.cpp">
 				</File>
-				<File
+				<File 
 					RelativePath="..\AsioSdk2\common\asiodrivers.cpp">
 				</File>
-				<File
+				<File 
 					RelativePath="..\AsioSdk2\common\asiolist.cpp">
 				</File>
 			</Filter>
-			<Filter
+			<Filter 
 				Name="WndProcs"
 				Filter="">
-				<File
+				<File 
 					RelativePath=".\AodixMainWnd.cpp">
 				</File>
-				<File
+				<File 
 					RelativePath=".\AodixPlug.cpp">
 				</File>
 			</Filter>
 		</Filter>
-		<Filter
+		<Filter 
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
-			<File
+			<File 
 				RelativePath=".\Aodix.h">
 			</File>
-			<File
+			<File 
 				RelativePath=".\AodixCore.h">
 			</File>
-			<File
+			<File 
 				RelativePath="..\Argulib\Argulib.h">
 			</File>
-			<File
+			<File 
 				RelativePath=".\resource.h">
 			</File>
-			<Filter
+			<Filter 
 				Name="VstSdk"
 				Filter="">
-				<File
+				<File 
 					RelativePath="..\VstSdk2.3\source\common\aeffectx.h">
 				</File>
-				<File
+				<File 
 					RelativePath="..\VstSdk2.3\source\common\AEffEditor.hpp">
 				</File>
-				<File
+				<File 
 					RelativePath="..\VstSdk2.3\source\common\audioeffectx.h">
 				</File>
 			</Filter>
-			<Filter
+			<Filter 
 				Name="AsioSdk"
 				Filter="">
-				<File
+				<File 
 					RelativePath="..\AsioSdk2\common\asio.h">
 				</File>
-				<File
+				<File 
 					RelativePath="..\AsioSdk2\common\asiodrivers.h">
 				</File>
-				<File
+				<File 
 					RelativePath="..\AsioSdk2\common\asiolist.h">
 				</File>
-				<File
+				<File 
 					RelativePath="..\AsioSdk2\common\asiosys.h">
 				</File>
-				<File
+				<File 
 					RelativePath="..\AsioSdk2\common\iasiodrv.h">
 				</File>
 			</Filter>
 		</Filter>
-		<Filter
+		<Filter 
 			Name="Resource Files"
 			Filter="">
-			<File
+			<File 
 				RelativePath=".\aodix.ico">
 			</File>
-			<File
+			<File 
 				RelativePath=".\Aodix.rc">
 			</File>
-			<File
+			<File 
 				RelativePath=".\hc.cur">
 			</File>
-			<File
+			<File 
 				RelativePath=".\ho.cur">
 			</File>
 		</Filter>
@@ -283,3 +306,4 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
