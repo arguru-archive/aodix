@@ -29,6 +29,11 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPTSTR lpCmdL
 	// get desktop device context
 	HDC const hdc_desktop=GetDC(hwnd_desktop);
 
+	char gfx_path[MAX_PATH], knb_path[MAX_PATH], gui_path[MAX_PATH];
+	sprintf(gfx_path, "%s\\gfx.bmp", gl_padx->cfg.skin_path);
+	sprintf(knb_path, "%s\\knb.bmp", gl_padx->cfg.skin_path);
+	sprintf(gui_path, "%s\\gui.bmp", gl_padx->cfg.skin_path);
+
 	// create gui/gfx device context(s)
 	gl_padx->hdc_gui=CreateCompatibleDC(hdc_desktop);
 	gl_padx->hdc_gfx=CreateCompatibleDC(hdc_desktop);
@@ -36,8 +41,8 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPTSTR lpCmdL
 
 	// load gui/gfx bitmap(s)
 	HBITMAP const hbitmap_gui=CreateCompatibleBitmap(hdc_desktop,2048,2049);
-	HBITMAP const hbitmap_gfx=(HBITMAP)LoadImage(hInstance,"Skin\\gfx.bmp",IMAGE_BITMAP,0,0,LR_LOADFROMFILE);
-	HBITMAP const hbitmap_knb=(HBITMAP)LoadImage(hInstance,"Skin\\knb.bmp",IMAGE_BITMAP,0,0,LR_LOADFROMFILE);
+	HBITMAP const hbitmap_gfx=(HBITMAP)LoadImage(hInstance,gfx_path,IMAGE_BITMAP,0,0,LR_LOADFROMFILE);
+	HBITMAP const hbitmap_knb=(HBITMAP)LoadImage(hInstance,knb_path,IMAGE_BITMAP,0,0,LR_LOADFROMFILE);
 
 	// select gui/gfx bitmap(s) in gui/gfx device context(s)
 	HBITMAP const hbitmap_gui_obm=(HBITMAP)SelectObject(gl_padx->hdc_gui,(HBITMAP)hbitmap_gui);
@@ -46,7 +51,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPTSTR lpCmdL
 
 	// blit GUI gfx into gui bitmap
 	HDC const hdc_frm=CreateCompatibleDC(hdc_desktop);
-	HBITMAP const hbitmap_frm=(HBITMAP)LoadImage(hInstance,"Skin\\gui.bmp",IMAGE_BITMAP,0,0,LR_LOADFROMFILE);
+	HBITMAP const hbitmap_frm=(HBITMAP)LoadImage(hInstance,gui_path,IMAGE_BITMAP,0,0,LR_LOADFROMFILE);
 	HBITMAP const hbitmap_frm_obm=(HBITMAP)SelectObject(hdc_frm,hbitmap_frm);
 	BitBlt(gl_padx->hdc_gui,0,0,2048,276,hdc_frm,0,0,SRCCOPY);
 	SelectObject(hdc_frm,hbitmap_frm_obm);
@@ -104,7 +109,10 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPTSTR lpCmdL
 #endif
 
 	// create window
-	gl_hwnd_main=CreateWindow("MWndAodix",buf,WS_OVERLAPPEDWINDOW,CW_USEDEFAULT,0,CW_USEDEFAULT,0,NULL,NULL,hInstance,NULL);
+	if (gl_padx->cfg.fullscreen)
+		gl_hwnd_main=CreateWindow("MWndAodix",buf,WS_POPUP,CW_USEDEFAULT,0,CW_USEDEFAULT,0,NULL,NULL,hInstance,NULL);
+	else
+		gl_hwnd_main=CreateWindow("MWndAodix",buf,WS_OVERLAPPEDWINDOW,CW_USEDEFAULT,0,CW_USEDEFAULT,0,NULL,NULL,hInstance,NULL);
 
 	// return false if window creation failed
 	if(gl_hwnd_main==NULL)
@@ -129,6 +137,17 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPTSTR lpCmdL
 
 	// set timer
 	SetTimer(gl_hwnd_main,1,16,NULL);
+
+	if (strlen(lpCmdLine) >= 2)
+	{
+		char path[MAX_PATH];
+		strcpy(path, lpCmdLine + 1);
+		path[strlen(path) - 1] = 0;
+
+		gl_padx->asio_enter_cs();
+		gl_padx->import_adx_file(gl_hwnd_main, path);
+		gl_padx->asio_leave_cs();
+	}
 
 	// msg
 	MSG msg;
