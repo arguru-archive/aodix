@@ -18,7 +18,7 @@ CAodixCore::CAodixCore(HINSTANCE const hinstance)
 	hwnd_edit=NULL;
 
 	// aodix version
-	aodix_version=4200;
+	aodix_version=4201;
 
 	// id of effect currently loading
 	instance_eff_id_currently_loading=0;
@@ -76,11 +76,9 @@ CAodixCore::CAodixCore(HINSTANCE const hinstance)
 	master_transport_last_y=0;
 
 	// set all instances to null state during initialization
-	for(i=0;i<MAX_INSTANCES;i++)
+	ADX_INSTANCE *pi = &instance[0];
+	do
 	{
-		// get instance pointer
-		ADX_INSTANCE* pi=&instance[i];
-
 		// initialize instance struct
 		pi->hwnd=NULL;
 		pi->peffect=NULL;
@@ -97,7 +95,9 @@ CAodixCore::CAodixCore(HINSTANCE const hinstance)
 		// clear instance alias
 		memset(pi->alias,0,32);
 		sprintf(pi->alias,"---");
+		pi++;
 	}
+	while (pi < &instance[MAX_INSTANCES]);
 
 	// initalize master input pin array
 	for(i=0;i<NUM_DSP_INPUTS;i++)
@@ -112,9 +112,9 @@ CAodixCore::CAodixCore(HINSTANCE const hinstance)
 
 	// create ppqn menu
 	hmenu_ppqn=CreatePopupMenu();
-	arg_menu_add_item(hmenu_ppqn,"048",16384);
-	arg_menu_add_item(hmenu_ppqn,"060",16385);
-	arg_menu_add_item(hmenu_ppqn,"096",16386);
+	arg_menu_add_item(hmenu_ppqn,"48",16384);
+	arg_menu_add_item(hmenu_ppqn,"60",16385);
+	arg_menu_add_item(hmenu_ppqn,"96",16386);
 	arg_menu_add_item(hmenu_ppqn,"120",16387);
 	arg_menu_add_item(hmenu_ppqn,"192",16388);
 	arg_menu_add_item(hmenu_ppqn,"240",16389);
@@ -338,6 +338,7 @@ void CAodixCore::reset_user(void)
 	user_rout_offset_y=-128;
 	user_pr_width=256;
 	user_pr_note_width=8;
+	user_pat_prev = 0;
 
 	// reset last vst parameter value
 	user_parameter_val=0.0f;
@@ -454,6 +455,9 @@ void CAodixCore::config_read(void)
 	for(int r=0;r<_MAX_PATH;r++)
 		cfg.reserved[r]=0;
 
+	// init skin path
+	strcpy(cfg.skin_path, "Skins\\Blue");
+
 	// init config vst path(s)
 	for(int pi=0;pi<MAX_VST_FOLDERS;pi++)
 		cfg.vst_path[pi][0]=0;
@@ -467,6 +471,7 @@ void CAodixCore::config_read(void)
 	cfg.rec_live=1;
 	cfg.stop_wrap=0;
 	cfg.keyboard_layout=0;
+	cfg.fullscreen = 0;
 
 	// init config asio driver
 	cfg.asio_driver_id=-1;
