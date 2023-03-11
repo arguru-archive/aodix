@@ -104,6 +104,12 @@ struct ADX_CONFIG
 
 	// recent opened files paths
 	char recent_file[NUM_RECENT_FILES][_MAX_PATH];
+
+	// skin folder path
+	char skin_path[_MAX_PATH];
+
+	// open in fullscreen mode
+	int fullscreen;
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -552,6 +558,7 @@ public:
 	int user_rout_offset_y;
 	int user_pr_width;
 	int user_pr_note_width;
+	int user_pat_prev;
 
 	// draggin wire
 	ADX_WIRE* user_pressed_wire;
