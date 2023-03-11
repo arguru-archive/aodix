@@ -26,15 +26,13 @@
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="4"
-				AdditionalOptions="">
+				DebugInformationFormat="4">
 				<IntelOptions 
 					Optimization="0"
 					MinimalRebuild="1"
 					BasicRuntimeChecks="3"
 					RuntimeLibrary="5"
-					AllOptions="/c  /ZI /nologo /W3 /Wp64 /Od /D &quot;WIN32&quot; /D &quot;_DEBUG&quot; /D &quot;_WINDOWS&quot; /D &quot;_MBCS&quot; /Gm /EHsc /RTC1 /MLd /Fo&quot;Debug/&quot; /Fd&quot;Debug/vc70.pdb&quot; /Gd /TP"
-					MSOriginalAdditionalOptions=""/>
+					AllOptions="/c  /ZI /nologo /W3 /Wp64 /Od /D &quot;WIN32&quot; /D &quot;_DEBUG&quot; /D &quot;_WINDOWS&quot; /D &quot;_MBCS&quot; /Gm /EHsc /RTC1 /MLd /Fo&quot;Debug/&quot; /Fd&quot;Debug/vc70.pdb&quot; /Gd /TP"/>
 			</Tool>
 			<Tool 
 				Name="VCCustomBuildTool"/>
@@ -47,11 +45,9 @@
 				GenerateDebugInformation="TRUE"
 				ProgramDatabaseFile="$(OutDir)/Aodix.pdb"
 				SubSystem="2"
-				TargetMachine="1"
-				AdditionalOptions="">
+				TargetMachine="1">
 				<IntelOptions 
-					AllOptions="/NOLOGO /OUT:&quot;Debug/Aodix.exe&quot; /INCREMENTAL winmm.lib htmlhelp.lib msimg32.lib /DEBUG /PDB:&quot;Debug/Aodix.pdb&quot; /SUBSYSTEM:WINDOWS /TLBID:1 /MACHINE:IX86  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
-					MSOriginalAdditionalOptions=""/>
+					AllOptions="/NOLOGO /OUT:&quot;Debug/Aodix.exe&quot; /INCREMENTAL winmm.lib htmlhelp.lib msimg32.lib /DEBUG /PDB:&quot;Debug/Aodix.pdb&quot; /SUBSYSTEM:WINDOWS /TLBID:1 /MACHINE:IX86  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"/>
 			</Tool>
 			<Tool 
 				Name="VCMIDLTool"/>
@@ -91,16 +87,13 @@
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="TRUE"
-				DebugInformationFormat="3"
-				AdditionalOptions="">
+				DebugInformationFormat="3">
 				<IntelOptions 
 					Optimization="2"
-					ImproveFloatingPointConsistency="0"
 					FavorSizeOrSpeed="1"
 					OptimizeForProcessor="3"
 					RuntimeLibrary="4"
-					AllOptions="/c  /Zi /nologo /W3 /Wp64 /O2 /Ot /G7 /D &quot;WIN32&quot; /D &quot;NDEBUG&quot; /D &quot;_WINDOWS&quot; /D &quot;_MBCS&quot; /FD /EHsc /ML /Fo&quot;Release/&quot; /Fd&quot;Release/vc70.pdb&quot; /Gd /TP"
-					MSOriginalAdditionalOptions=""/>
+					AllOptions="/c  /Zi /nologo /W3 /Wp64 /O2 /Ot /G7 /D &quot;WIN32&quot; /D &quot;NDEBUG&quot; /D &quot;_WINDOWS&quot; /D &quot;_MBCS&quot; /FD /EHsc /ML /Fo&quot;Release/&quot; /Fd&quot;Release/vc70.pdb&quot; /Gd /TP"/>
 			</Tool>
 			<Tool 
 				Name="VCCustomBuildTool"/>
@@ -114,11 +107,9 @@
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				TargetMachine="1"
-				AdditionalOptions="">
+				TargetMachine="1">
 				<IntelOptions 
-					AllOptions="/NOLOGO /OUT:&quot;Release/Aodix.exe&quot; /INCREMENTAL:NO winmm.lib htmlhelp.lib msimg32.lib /DEBUG /PDB:&quot;Release/Aodix.pdb&quot; /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /MACHINE:IX86  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
-					MSOriginalAdditionalOptions=""/>
+					AllOptions="/NOLOGO /OUT:&quot;Release/Aodix.exe&quot; /INCREMENTAL:NO winmm.lib htmlhelp.lib msimg32.lib /DEBUG /PDB:&quot;Release/Aodix.pdb&quot; /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /MACHINE:IX86  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"/>
 			</Tool>
 			<Tool 
 				Name="VCMIDLTool"/>
@@ -153,6 +144,14 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
 			<File 
 				RelativePath=".\Aodix.cpp">
+				<FileConfiguration 
+					Name="Release|Win32">
+					<Tool 
+						Name="VCCLCompilerTool">
+						<IntelOptions 
+							AllOptions="/c  /Zi /nologo /W3 /Wp64 /O2 /Ot /G7 /D &quot;WIN32&quot; /D &quot;NDEBUG&quot; /D &quot;_WINDOWS&quot; /D &quot;_MBCS&quot; /FD /EHsc /ML /Fo&quot;Release/&quot; /Fd&quot;Release/vc70.pdb&quot; /Gd /TP"/>
+					</Tool>
+				</FileConfiguration>
 			</File>
 			<File 
 				RelativePath=".\AodixCore.cpp">
