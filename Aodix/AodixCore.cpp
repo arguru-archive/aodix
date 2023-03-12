@@ -467,7 +467,7 @@ void CAodixCore::config_read(void)
 		cfg.recent_file[rf][0]=0;
 
 	// init user gui config values
-	cfg.vl_unused=0;
+	cfg.instance_autolink=0;
 	cfg.rec_live=1;
 	cfg.stop_wrap=0;
 	cfg.keyboard_layout=0;

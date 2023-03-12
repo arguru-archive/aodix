@@ -72,7 +72,7 @@ struct ADX_CONFIG
 	char reserved[_MAX_PATH];
 
 	// user GUI parameters
-	int	vl_unused;
+	int	instance_autolink;
 	int	stop_wrap;
 	int	rec_live;
 	int	keyboard_layout;

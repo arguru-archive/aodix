@@ -128,6 +128,9 @@ LRESULT CALLBACK conf_dlg_proc(HWND hdlg,UINT message,WPARAM wparam,LPARAM lpara
 		SetDlgItemText(hdlg,IDC_VST_PATH_EDIT3,gl_padx->cfg.vst_path[2]);
 		SetDlgItemText(hdlg,IDC_VST_PATH_EDIT4,gl_padx->cfg.vst_path[3]);
 
+		// set skin path
+		SetDlgItemText(hdlg,IDC_SKIN_PATH_EDIT,gl_padx->cfg.skin_path);
+
 		// get kbd layout combo pointer
 		HWND const hwnd_kbd_comb=GetDlgItem(hdlg,IDC_KBD_LAYOUT_COMBO);
 
@@ -167,6 +170,12 @@ LRESULT CALLBACK conf_dlg_proc(HWND hdlg,UINT message,WPARAM wparam,LPARAM lpara
 		CheckDlgButton(hdlg,IDC_CHECK_MIDI_CH_ROUT,gl_padx->cfg.midi_in_ch_rout);
 		CheckDlgButton(hdlg,IDC_CHECK_MIDI_VL_ROUT,gl_padx->cfg.midi_in_vl_rout);
 		CheckDlgButton(hdlg,IDC_CHECK_MIDI_IN_OPEN,gl_padx->cfg.midi_in_dv_open);
+
+		// check instance autolink to master
+		CheckDlgButton(hdlg,IDC_AUTOLINK_CHECK,gl_padx->cfg.instance_autolink);
+
+		// check fullscreen option
+		CheckDlgButton(hdlg,IDC_FULLSCREEN_CHECK,gl_padx->cfg.fullscreen);
 
 		return TRUE;
 	}
@@ -220,6 +229,15 @@ LRESULT CALLBACK conf_dlg_proc(HWND hdlg,UINT message,WPARAM wparam,LPARAM lpara
 			return TRUE;
 		}
 
+		// skin folder browser
+		if(lw_par==IDC_SKIN_PATH_BUTTON)
+		{
+			GetDlgItemText(hdlg,IDC_SKIN_PATH_EDIT,buf,_MAX_PATH);
+			conf_browse_folder(hdlg,buf);
+			SetDlgItemText(hdlg,IDC_SKIN_PATH_EDIT,buf);
+			return TRUE;
+		}
+
 		// dialog ok, accept changes
 		if(lw_par==IDC_APPLY_BUTTON || lw_par==IDOK) 
 		{
@@ -266,6 +284,9 @@ LRESULT CALLBACK conf_dlg_proc(HWND hdlg,UINT message,WPARAM wparam,LPARAM lpara
 			GetDlgItemText(hdlg,IDC_VST_PATH_EDIT3,gl_padx->cfg.vst_path[2],_MAX_PATH);
 			GetDlgItemText(hdlg,IDC_VST_PATH_EDIT4,gl_padx->cfg.vst_path[3],_MAX_PATH);
 
+			// set new skin path
+			GetDlgItemText(hdlg,IDC_SKIN_PATH_EDIT,gl_padx->cfg.skin_path,_MAX_PATH);
+
 			// refresh library
 			gl_padx->gui_vst_build_lib();
 
@@ -282,6 +303,12 @@ LRESULT CALLBACK conf_dlg_proc(HWND hdlg,UINT message,WPARAM wparam,LPARAM lpara
 			gl_padx->cfg.midi_in_ch_rout=IsDlgButtonChecked(hdlg,IDC_CHECK_MIDI_CH_ROUT);
 			gl_padx->cfg.midi_in_vl_rout=IsDlgButtonChecked(hdlg,IDC_CHECK_MIDI_VL_ROUT);
 			gl_padx->cfg.midi_in_dv_open=IsDlgButtonChecked(hdlg,IDC_CHECK_MIDI_IN_OPEN);
+
+			// set instance autolink
+			gl_padx->cfg.instance_autolink=IsDlgButtonChecked(hdlg,IDC_AUTOLINK_CHECK);
+
+			// set fullscreen option
+			gl_padx->cfg.fullscreen=IsDlgButtonChecked(hdlg,IDC_FULLSCREEN_CHECK);
 
 			// restart midi
 			gl_padx->midi_in_init();
