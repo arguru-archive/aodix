@@ -364,13 +364,18 @@ public:
 	void edit_copy(int const cut);
 	void edit_paste(void);
 	void edit_select_all(void);
+	void edit_interpolate(void);
 	void edit_transpose(int const amt,int const apply_quantize);
 	void edit_randomize(void);
-	void edit_interpolate(void);
 	void edit_add_new_marker(ADX_PATTERN* pp,int const position);
 	void edit_add_wire(ADX_PIN* pp,int const instance_index,int const pin_index,float const gain);
 	void edit_del_wire(ADX_PIN* pp,int const index);
 	void edit_clr_pin(ADX_PIN* pp);
+
+public:
+	ADX_EVENT* edit_find_event(int pat,int pos,int trk);
+	ADX_EVENT* edit_find_next_event(int pat,int pos,int trk,int len);
+	ADX_EVENT* edit_find_prev_event(int pat,int pos,int trk,int len);
 
 public:
 	int	edit_get_quantization(void);

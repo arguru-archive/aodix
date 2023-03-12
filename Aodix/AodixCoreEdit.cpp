@@ -377,6 +377,72 @@ void CAodixCore::edit_add_new_marker(ADX_PATTERN* pp,int const position)
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void CAodixCore::edit_interpolate(void)
+{
+	// set wait cursor
+	SetCursor(hcursor_wait);
+
+	// space between interpolated events
+	int i_quantize=edit_get_quantization();
+	if(i_quantize<1)
+		i_quantize=1;
+
+	// get block length
+	int const user_block_pos_len=user_block_pos_end-user_block_pos_sta;
+
+	// range selected
+	if(user_block_pos_len>0)
+	{
+		// each selected track
+		for(int track=user_block_trk_sta;track<user_block_trk_end;track++)
+		{
+			// get first/last events inside selection
+			ADX_EVENT* e_sta=edit_find_next_event(user_pat,user_block_pos_sta,track,user_block_pos_len);
+			ADX_EVENT* e_end=edit_find_prev_event(user_pat,user_block_pos_end,track,user_block_pos_len);
+
+			// must be at least 2 events at different times inside block
+			if(e_sta && e_end && e_sta->pos<e_end->pos)
+			{
+				// time between first/last event
+				double pos_diff=e_end->pos-e_sta->pos;
+
+				// step by quantize amount
+				for(int cur_pos=e_sta->pos;cur_pos<e_end->pos;cur_pos+=i_quantize)
+				{
+					// get event at cur_pos
+					ADX_EVENT* pe=edit_find_event(user_pat,cur_pos,track);
+
+					// create new event if doesn't exist
+					if(!pe)
+					{
+						pe=&seq_event[seq_num_events];
+						*pe=*e_sta;
+						pe->pos=cur_pos;
+						seq_num_events++;
+					}
+
+					// fraction of time from start to end
+					double t=(cur_pos-e_sta->pos)/pos_diff;
+
+					// interpolate data based on selected row
+					if(user_row==1 || user_row==2)
+						pe->da0=(int)(e_sta->da0+t*(e_end->da0-e_sta->da0));
+					else if(user_row==3 || user_row==4)
+						pe->da1=(int)(e_sta->da1+t*(e_end->da1-e_sta->da1));
+					else if(user_row==5 || user_row==6 || user_row==0)
+						pe->da2=(int)(e_sta->da2+t*(e_end->da2-e_sta->da2));
+					else if(user_row==7 || user_row==8)
+						pe->da3=(int)(e_sta->da3+t*(e_end->da3-e_sta->da3));
+				}
+			}
+		}
+	}
+
+	// set arrow cursor
+	SetCursor(hcursor_arro);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void CAodixCore::edit_randomize(void)
 {
 	// set wait cursor
@@ -470,12 +536,6 @@ void CAodixCore::edit_randomize(void)
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-void CAodixCore::edit_interpolate(void)
-{
-	
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void CAodixCore::edit_add_wire(ADX_PIN* pp,int const instance_index,int const pin_index,float const gain)
 {
 	// enter critical section
@@ -551,4 +611,64 @@ void CAodixCore::edit_clr_pin(ADX_PIN* pp)
 	// clear pin
 	pp->num_wires=0;
 	pp->pwire=NULL;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ADX_EVENT* CAodixCore::edit_find_event(int pat,int pos,int trk)
+{
+	// scan sequencer events
+	for(int e=0;e<seq_num_events;e++)
+	{
+		// get event pointer
+		ADX_EVENT* pe=&seq_event[e];
+
+		// event matches parameters
+		if(pe->pat==pat && pe->pos==pos && pe->trk==trk)
+			return pe;
+	}
+	return NULL;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ADX_EVENT* CAodixCore::edit_find_next_event(int pat,int pos,int trk,int len)
+{
+	int pos_last=pos+len;
+	ADX_EVENT* found=NULL;
+
+	// scan sequencer events
+	for(int e=0;e<seq_num_events;e++)
+	{
+		// get event pointer
+		ADX_EVENT* pe=&seq_event[e];
+
+		// event matches parameters and is earlier than found
+		if(pe->pat==pat && pe->pos>=pos && pe->pos<pos_last && pe->trk==trk)
+		{
+			pos_last=pe->pos;
+			found=pe;
+		}
+	}
+	return found;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ADX_EVENT* CAodixCore::edit_find_prev_event(int pat,int pos,int trk,int len)
+{
+	int pos_first=pos-len;
+	ADX_EVENT* found=NULL;
+
+	// scan sequencer events
+	for(int e=0;e<seq_num_events;e++)
+	{
+		// get event pointer
+		ADX_EVENT* pe=&seq_event[e];
+
+		// event matches parameters and is later than found
+		if(pe->pat==pat && pe->pos<=pos && pe->pos>pos_first && pe->trk==trk)
+		{
+			pos_first=pe->pos;
+			found=pe;
+		}
+	}
+	return found;
 }
