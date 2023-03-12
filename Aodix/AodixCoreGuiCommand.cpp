@@ -385,6 +385,12 @@ void CAodixCore::gui_command(HWND const hwnd,int const id)
 		gui_is_dirty=1;
 	}
 
+	if(id==ID_EDIT_INTERPOLATE)
+	{
+		edit_interpolate();
+		gui_is_dirty=1;
+	}
+
 	// show compiled html help
 	if(id==ID_HELP_CONTENT)
 		HtmlHelp(hwnd,hlp_fil,HH_DISPLAY_TOPIC,0);

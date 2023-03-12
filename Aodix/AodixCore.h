@@ -366,6 +366,7 @@ public:
 	void edit_select_all(void);
 	void edit_transpose(int const amt,int const apply_quantize);
 	void edit_randomize(void);
+	void edit_interpolate(void);
 	void edit_add_new_marker(ADX_PATTERN* pp,int const position);
 	void edit_add_wire(ADX_PIN* pp,int const instance_index,int const pin_index,float const gain);
 	void edit_del_wire(ADX_PIN* pp,int const index);
