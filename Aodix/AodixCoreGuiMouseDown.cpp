@@ -389,6 +389,13 @@ void CAodixCore::gui_mouse_down(HWND const hwnd,bool const is_double_click)
 		if(pi->peffect!=NULL && pi->hwnd && IsWindow(pi->hwnd))
 			SetWindowPos(pi->hwnd,HWND_TOP,0,0,0,0,SWP_NOSIZE | SWP_NOMOVE);
 
+		// center instance in routing window if ctrl+clicked
+		if(pi->peffect!=NULL && GetKeyState(VK_CONTROL)<0)
+		{
+			this->user_rout_offset_x = pi->x-(w/2)+64;
+			this->user_rout_offset_y = pi->y-(rout_area_h/2)+24;
+		}
+
 		// double click
 		if(is_double_click)
 		{
