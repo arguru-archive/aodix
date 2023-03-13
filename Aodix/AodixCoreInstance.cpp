@@ -96,6 +96,10 @@ void CAodixCore::instance_dll(HWND const hwnd,ADX_INSTANCE* pi,char* filename,in
 			// reset wire array
 			pp->pwire=NULL;
 			pp->num_wires=0;
+
+			// add wire to master
+			if (cfg.instance_autolink)
+				edit_add_wire(pp, MASTER_INSTANCE, o, 1.0);
 		}
 	}
 
@@ -363,20 +367,24 @@ void CAodixCore::instance_add_midi_event(ADX_INSTANCE* pi,int const track,unsign
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void CAodixCore::instance_midi_panic(ADX_INSTANCE* pi,bool const all_notes_off,bool const all_sounds_off)
 {
-	// check all notes off flag
-	if(all_notes_off)
+	// check if effect is instanced
+	if(pi->peffect!=NULL)
 	{
-		// all notes off thru all channels
-		for(int c=0;c<16;c++)
-			instance_add_midi_event(pi,user_trk,0xB0+c,123,0,0,0);
-	}
+		// check all notes off flag
+		if(all_notes_off)
+		{
+			// all notes off thru all channels
+			for(int c=0;c<16;c++)
+				instance_add_midi_event(pi,user_trk,0xB0+c,123,0,0,0);
+		}
 
-	// check all sounds off flag
-	if(all_sounds_off)
-	{
-		// all sounds off thru all channels
-		for(int c=0;c<16;c++)
-			instance_add_midi_event(pi,user_trk,0xB0+c,120,0,0,0); 
+		// check all sounds off flag
+		if(all_sounds_off)
+		{
+			// all sounds off thru all channels
+			for(int c=0;c<16;c++)
+				instance_add_midi_event(pi,user_trk,0xB0+c,120,0,0,0); 
+		}
 	}
 }
 
