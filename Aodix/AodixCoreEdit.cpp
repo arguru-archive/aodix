@@ -35,11 +35,11 @@ int CAodixCore::edit_get_quantization(void)
 	case 18: return (i_ppqn*3)*2;
 
 		// triplets
-	case 20: return (i_ppqn*8)/384;
-	case 21: return (i_ppqn*8)/192;
-	case 22: return (i_ppqn*8)/96;
-	case 23: return (i_ppqn*8)/48;
-	case 24: return (i_ppqn*8)/24;
+	case 20: return i_ppqn/48;
+	case 21: return i_ppqn/24;
+	case 22: return i_ppqn/12;
+	case 23: return i_ppqn/6;
+	case 24: return i_ppqn/3;
 	case 25: return (i_ppqn*8)/12;
 	case 26: return (i_ppqn*8)/6;
 	case 27: return (i_ppqn*8)/3;
