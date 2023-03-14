@@ -32,6 +32,16 @@ void CAodixCore::gui_key_down(HWND const hwnd,int const keycode,int const flags)
 	// shift no pressed, control pressed
 	if(GetKeyState(VK_SHIFT)>=0 && GetKeyState(VK_CONTROL)<0)
 	{
+		// return to previous pattern
+		if(keycode==VK_RETURN)
+		{
+			// set pattern
+			user_pat=user_pat_prev;
+
+			// post refresh
+			gui_is_dirty=1;
+		}
+
 		// go prev track event
 		if(keycode==VK_UP)
 		{
@@ -210,6 +220,10 @@ void CAodixCore::gui_key_down(HWND const hwnd,int const keycode,int const flags)
 		// sequencer edit select all
 		if(keycode=='A')
 			gui_command(hwnd,ID_EDIT_SELECTALL);
+		
+		// sequencer edit interpolate
+		if(keycode=='I')
+			gui_command(hwnd,ID_EDIT_INTERPOLATE);
 
 		// sequencer edit quantize notes
 		if(keycode=='Q')
@@ -529,6 +543,9 @@ void CAodixCore::gui_key_down(HWND const hwnd,int const keycode,int const flags)
 					// set cue loop
 					pp->cue_sta=pp->usr_pos=pm->pos*pm->flg;
 					pp->cue_end=pp->cue_sta+pe->par;
+
+					// store previous pattern
+					user_pat_prev = user_pat;
 
 					// wrap
 					user_pat=pe->da0;
