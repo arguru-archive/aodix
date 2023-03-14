@@ -60,9 +60,13 @@ long VSTCALLBACK host_audiomaster(AEffect *effect, long opcode, long index, long
 	if(opcode==audioMasterTempoAt)
 		return long(gl_padx->master_time_info.tempo*10000.0);
 
-	// instance wants number of host automatable parameters ??????? (wtf)
+	// instance wants number of host automatable parameters
 	if(opcode==audioMasterGetNumAutomatableParameters)
-		return 1024;
+	{
+		if(effect)
+			return effect->numParams;
+		return 0;
+	}
 
 	// instance wants host parameter quantization
 	if(opcode==audioMasterGetParameterQuantization)
