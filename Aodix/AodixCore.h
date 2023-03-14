@@ -321,6 +321,10 @@ public:
 	void paint(HWND const hwnd,HDC const hdc,int const w,int const h);
 
 public:
+	void paint_sequencer(HWND const hwnd,HDC const hdc,int const w,int const h);
+	void paint_routing(HWND const hwnd,HDC const hdc,int const w,int const h);
+
+public:
 	void dsp_work(void);
 	void dsp_clear_input_buffers(void);
 	void dsp_transport_play(void);
