@@ -155,7 +155,7 @@ void CAodixCore::midi_in_process(BYTE const data0,BYTE const data1,BYTE const da
 								new_event_pos=seq_sample_to_pos(master_transport_sampleframe);
 
 							// add automation event
-							seq_add_event(new_event_pos,user_pat,user_trk,4,user_instance,(p>>8)&0xFF,p&0xFF,(data2<<1),user_edit_overwrite);
+							seq_add_event(new_event_pos,user_pat,user_trk,4,i,(p>>8)&0xFF,p&0xFF,(data2<<1),user_edit_overwrite);
 						}
 					}
 				}
