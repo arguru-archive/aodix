@@ -76,9 +76,11 @@ CAodixCore::CAodixCore(HINSTANCE const hinstance)
 	master_transport_last_y=0;
 
 	// set all instances to null state during initialization
-	ADX_INSTANCE *pi = &instance[0];
-	do
+	for(i=0;i<MAX_INSTANCES;i++)
 	{
+		// get instance pointer
+		ADX_INSTANCE* pi=&instance[i];
+
 		// initialize instance struct
 		pi->hwnd=NULL;
 		pi->peffect=NULL;
@@ -95,9 +97,7 @@ CAodixCore::CAodixCore(HINSTANCE const hinstance)
 		// clear instance alias
 		memset(pi->alias,0,32);
 		sprintf(pi->alias,"---");
-		pi++;
 	}
-	while (pi < &instance[MAX_INSTANCES]);
 
 	// initalize master input pin array
 	for(i=0;i<NUM_DSP_INPUTS;i++)
