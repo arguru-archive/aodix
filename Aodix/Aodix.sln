@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 8.00
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Aodix", "Aodix.vcproj", "{DC0A40E2-53E6-458E-BBC3-D4BF55235157}"
+Project("{EAF909A5-FA59-4C3D-9431-0FCC20D5BCF9}") = "Aodix", "Aodix.icproj", "{673A2CD8-0276-401E-A4DA-4494C2E43DFA}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
@@ -9,10 +9,14 @@ Global
 		Release = Release
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
-		{DC0A40E2-53E6-458E-BBC3-D4BF55235157}.Debug.ActiveCfg = Debug|Win32
-		{DC0A40E2-53E6-458E-BBC3-D4BF55235157}.Debug.Build.0 = Debug|Win32
-		{DC0A40E2-53E6-458E-BBC3-D4BF55235157}.Release.ActiveCfg = Release|Win32
+		{673A2CD8-0276-401E-A4DA-4494C2E43DFA}.Debug.ActiveCfg = Debug|Win32
+		{673A2CD8-0276-401E-A4DA-4494C2E43DFA}.Debug.Build.0 = Debug|Win32
+		{673A2CD8-0276-401E-A4DA-4494C2E43DFA}.Release.ActiveCfg = Release|Win32
+		{673A2CD8-0276-401E-A4DA-4494C2E43DFA}.Release.Build.0 = Release|Win32
 		{DC0A40E2-53E6-458E-BBC3-D4BF55235157}.Release.Build.0 = Release|Win32
+		{DC0A40E2-53E6-458E-BBC3-D4BF55235157}.Release.ActiveCfg = Release|Win32
+		{DC0A40E2-53E6-458E-BBC3-D4BF55235157}.Debug.Build.0 = Debug|Win32
+		{DC0A40E2-53E6-458E-BBC3-D4BF55235157}.Debug.ActiveCfg = Debug|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection
