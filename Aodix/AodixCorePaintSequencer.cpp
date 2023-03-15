@@ -29,15 +29,6 @@ void CAodixCore::paint_sequencer(HWND const hwnd,HDC const hdc,int const w,int c
         // temporal text buffer holder
         char buf_a[256];
 
-        // back color
-        COLORREF const bck_color=GetPixel(hdc_gfx,0,0);
-
-        // alphablend structure
-        BLENDFUNCTION bf;
-        bf.AlphaFormat=0;
-        bf.BlendFlags=0;
-        bf.BlendOp=0;
-
         // get current pattern pointer
         ADX_PATTERN* pp=&project.pattern[user_pat];
 
@@ -46,6 +37,15 @@ void CAodixCore::paint_sequencer(HWND const hwnd,HDC const hdc,int const w,int c
 
         // get master pos
         int const i_master_play_pos=seq_sample_to_pos(master_transport_sampleframe);
+
+        // back color
+        COLORREF const bck_color=GetPixel(hdc_gfx,0,0);
+
+        // alphablend structure
+        BLENDFUNCTION bf;
+        bf.AlphaFormat=0;
+        bf.BlendFlags=0;
+        bf.BlendOp=0;
 
 		// sequencer client area
 		int const seq_area_y=264;

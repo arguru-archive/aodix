@@ -13,6 +13,9 @@ void CAodixCore::paint_routing(HWND const hwnd,HDC const hdc,int const w,int con
         // temporal text buffer holder
         char buf_a[256];
 
+        // instance current selected instance pointer
+        ADX_INSTANCE* pi=&instance[user_instance];
+
         // back color
         COLORREF const bck_color=GetPixel(hdc_gfx,0,0);
 
@@ -21,9 +24,6 @@ void CAodixCore::paint_routing(HWND const hwnd,HDC const hdc,int const w,int con
         bf.AlphaFormat=0;
         bf.BlendFlags=0;
         bf.BlendOp=0;
-
-        // instance current selected instance pointer
-        ADX_INSTANCE* pi=&instance[user_instance];
 
 		// routing view client area
 		int const rout_area_y=232;
