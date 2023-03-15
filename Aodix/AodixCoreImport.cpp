@@ -48,8 +48,11 @@ void CAodixCore::import_adx_pin(ADX_PIN* pin_array,int num_pins,FILE* pfile)
 		fread(&pp->num_wires,sizeof(int),1,pfile);
 
 		// read wire data
-		pp->pwire=new ADX_WIRE[pp->num_wires];
-		fread(pp->pwire,sizeof(ADX_WIRE),pp->num_wires,pfile);
+		if (pp->num_wires > 0)
+		{
+			pp->pwire=new ADX_WIRE[pp->num_wires];
+			fread(pp->pwire,sizeof(ADX_WIRE),pp->num_wires,pfile);
+		}
 	}
 }
 
