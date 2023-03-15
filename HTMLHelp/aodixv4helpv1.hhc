@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="Background" value="0xffffff">
+	<param name="Window Styles" value="0x800025">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Welcome">
+		<param name="Local" value="index.htm">
+		<param name="ImageNumber" value="11">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Features Overview">
+		<param name="Local" value="overview_feat.html">
+		<param name="ImageNumber" value="11">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Getting Started">
+		<param name="Local" value="gettingstarted.html">
+		<param name="ImageNumber" value="2">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Interface">
+			<param name="Local" value="gettingstarted.html#interface">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Menus">
+			<param name="Local" value="gettingstarted.html#menus">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Configuration">
+			<param name="Local" value="gettingstarted.html#configure">
+			<param name="ImageNumber" value="41">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Load your first VST Instrument">
+			<param name="Local" value="gettingstarted.html#loadvsti">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Registrattion">
+			<param name="Local" value="gettingstarted.html#register">
+			<param name="ImageNumber" value="27">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Operation Guide">
+		<param name="Local" value="operation.htm">
+		<param name="ImageNumber" value="2">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Checking that all is fine">
+			<param name="Local" value="operation.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Loading Plug-Ins as Instances">
+			<param name="Local" value="operation.htm#loadvst">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Recording First Tracks">
+			<param name="Local" value="operation.htm#rec">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Arranging Project">
+			<param name="Local" value="operation.htm#arrange">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Record, Type-In, Arrange">
+				<param name="Local" value="operation.htm#recordnotes">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Tweak Parameters">
+				<param name="Local" value="operation.htm#tweakparameters">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Use Pattern Calls">
+				<param name="Local" value="operation.htm#patterncalls">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Mastering and Finishing Project">
+			<param name="Local" value="operation.htm#finishing">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Bouncing Project (Rendering)">
+			<param name="Local" value="operation.htm#bounce">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Detailed Interface Documentation">
+		<param name="Local" value="detailed_desc.html">
+		<param name="ImageNumber" value="2">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Global View">
+			<param name="Local" value="detailed_desc.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Audio Master">
+			<param name="Local" value="detailed_desc.html#audiomaster">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Sequencer Edit">
+			<param name="Local" value="detailed_desc.html#edit">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="VST Instances">
+			<param name="Local" value="detailed_desc.html#vstlist">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="VST Parameters">
+			<param name="Local" value="detailed_desc.html#vstparams">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Info, Vumeters">
+			<param name="Local" value="detailed_desc.html#infoblock">
+			<param name="ImageNumber" value="41">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Sequencer">
+			<param name="Local" value="detailed_desc.html#sequencer">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Main Items">
+				<param name="Local" value="detailed_desc.html#sequencer">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Track Gadgets">
+				<param name="Local" value="detailed_desc.html#s1">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Cues and Markers">
+				<param name="Local" value="detailed_desc.html#s2">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Mouse Operation">
+				<param name="Local" value="detailed_desc.html#s3">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Browsing">
+				<param name="Local" value="detailed_desc.html#s4">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Pattern Arrangement">
+				<param name="Local" value="detailed_desc.html#s5">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Keyboard Layout">
+				<param name="Local" value="detailed_desc.html#s51">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Event Syntaxes">
+				<param name="Local" value="detailed_desc.html#s6">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Pianoroll">
+				<param name="Local" value="detailed_desc.html#s7">
+				<param name="ImageNumber" value="9">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Routing">
+			<param name="Local" value="detailed_desc.html#routing">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Connecting, Wiring">
+				<param name="Local" value="detailed_desc.html#routing">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Config. Master Output Pins">
+				<param name="Local" value="detailed_desc.html#r2">
+				<param name="ImageNumber" value="41">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Config. Master Input Pins">
+				<param name="Local" value="detailed_desc.html#inputpins">
+				<param name="ImageNumber" value="41">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Object pins">
+				<param name="Local" value="detailed_desc.html#objectpins">
+				<param name="ImageNumber" value="9">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Menu Items">
+			<param name="Local" value="detailed_desc.html#menuitems">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Shortcut List">
+		<param name="Local" value="quickshortcuts.htm">
+		<param name="ImageNumber" value="35">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Troubleshooting">
+		<param name="Local" value="troubleshooting.htm">
+		<param name="ImageNumber" value="42">
+		</OBJECT>
+</UL>
+</BODY></HTML>

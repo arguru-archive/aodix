@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Arrange">
+		<param name="Name" value="Operation">
+		<param name="Local" value="operation.htm#arrange">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ASIO">
+		<param name="Name" value="Getting Started">
+		<param name="Local" value="gettingstarted.html#configure">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ASIO Configuration">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#infoblock">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Audio Master">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#audiomaster">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Automation">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#vstparams">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Bounce">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#bounce">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Browse">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s4">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Browse pattern">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s4">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Configuration">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#menuitems">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Configuration">
+		<param name="Name" value="Getting Started">
+		<param name="Local" value="gettingstarted.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Connect audio">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#r2">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Connect wire">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#routing">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Cues">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s2">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Edit">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#edit">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Event Syntax">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s6">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Exit">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#menuitems">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Import">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#menuitems">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Info">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#infoblock">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Input">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#inputpins">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Keyboard">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s5">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Keyboard PC">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s51">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Markers">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s2">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Master Output">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#r2">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Menu">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#menuitems">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Midi Mask">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#midimask">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MidiCC">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#midiccvsautomation">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MidiCC">
+		<param name="Name" value="Operation">
+		<param name="Local" value="operation.htm#tweakparameters">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Mouse">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s3">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Open">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#menuitems">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Output">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#r2">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Output pins">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#routing">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Pattern Calls">
+		<param name="Name" value="Operation">
+		<param name="Local" value="operation.htm#patterncalls">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PPQN">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#audiomaster">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="problem">
+		<param name="Name" value="Troubleshooting">
+		<param name="Local" value="troubleshooting.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Quit">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#menuitems">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Record">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#audiomaster">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Record">
+		<param name="Name" value="Operation">
+		<param name="Local" value="operation.htm#recordnotes">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Register">
+		<param name="Name" value="Getting Started">
+		<param name="Local" value="gettingstarted.html#register">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Render">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#bounce">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Routing">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#routing">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sample Rate">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#infoblock">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Save">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#menuitems">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Select all events">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#menuitems">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Select Block">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s3">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Select Event">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s3">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Select Instance">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#vstlist">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Select object">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s3">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sequencer">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s6">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sequencer">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#sequencer">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Shortcut">
+		<param name="Local" value="Quickshortcuts.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Step">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#edit">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Stop Marker">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s2">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Syntaxes">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s6">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Track">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s1">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Track, Mute, Solo">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#s1">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="VST">
+		<param name="Name" value="Operation">
+		<param name="Local" value="operation.htm#loadvst">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="VST Automation">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#vstparams">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="VST Instances">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#vstlist">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="VST Parameters">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#vstparams">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Vumeters">
+		<param name="Name" value="Detailed Doc">
+		<param name="Local" value="detailed_desc.html#infoblock">
+		</OBJECT>
+</UL>
+</BODY></HTML>

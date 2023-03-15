@@ -1,0 +1,925 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Detailed Doc</title>
+</head>
+
+<body>
+
+<p align="center"><b><font face="Verdana">Aodix v4 Interface Detailed&nbsp; 
+Documentation</font></b></p>
+<p align="center"><font face="Verdana" size="2"><b>Please read the 
+<a href="overview_feat.html"><font color="#008080">Overview</font></a> and the 
+<a href="gettingstarted.html"><font color="#008080">Getting Started</font></a> sections in order to have Aodix v4 running properly, before reading this section.<br>
+</b>This section describes in detail all the interface elements.</font></p>
+<p align="left"><b><font face="Verdana" size="2">Contents :</font></b></p>
+<p align="left"><font face="Verdana" size="2"><a href="#audiomaster">
+<font color="#008080">1. Audio Master section</font></a><font color="#008080"><br>
+</font>
+<a href="#edit"><font color="#008080">2. Sequencer Edit Section</font></a><font color="#008080"><br>
+</font>
+<a href="#vstlist"><font color="#008080">3. VST Instance List</font></a><font color="#008080"><br>
+</font>
+<a href="#vstparams"><font color="#008080">4. VST Parameters</font></a><font color="#008080"><br>
+</font>
+<a href="#infoblock">
+<font color="#008080">5. Info, Vumeters</font></a><font color="#008080"><br>
+</font>
+<a href="#sequencer"><font color="#008080">6. Sequencer</font></a><font color="#008080">
+</font> </font><font face="Verdana" size="1">(all objects and behaviors, mouse and 
+keyboard, arrangement and syntaxes...)</font><font face="Verdana" size="2"><br>
+<a href="#routing"><font color="#008080">7. Routing</font></a><font color="#008080"><br>
+</font>
+<a href="#menuitems"><font color="#008080">8. Menu Items</font></a></font></p>
+<p align="left"><b><font face="Verdana">Aodix Interface<br>
+</font></b>
+<img border="0" src="images/aodixmain_desc.jpg" width="600" height="400"></p>
+<p align="left"><b><font face="Verdana" size="2"><br>
+</font><font face="Verdana"><a name="audiomaster">1. Audio Master section</a></font></b></p>
+<p align="left">
+<img border="0" src="images/audiomaster.jpg" width="264" height="116"></p>
+<p align="left"><font face="Verdana" size="2"><u>Big counter ---:-:--- : </u>displays 
+absolute midi-point counter.<u><br>
+Counter hh:mm:ss :</u> displays hh:mm:ss issued from midi-point conversion.<i> Be careful, tempo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; changes inside a project make this counter irrelevant.<br>
+</i><u>Counter % DSP </u>: displays CPU load for DSP and sequencer processing.</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Tempo :</u> sets tempo for 
+global project, or modify tempo, recordable with Aut.<br>
+<u>Time Sig :</u> sets time signature for the whole project 4:4 or 3:4.<br>
+<u>PPQN :</u> sets the amount of Points Per Quarter Note (or points per beat). 192 
+is usually more<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; than enough.<br>
+<u>Block Size :</u> displays system processing block size (in samples). To 
+change it, open your<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ASIO control panel. Your soundcard manufacturer provides you with a simple<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+way to access it. You may also open the control panel by clicking on the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&quot;ASIO Drv&quot; button (see &quot;Configuration&quot; section : 5).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+We recommend that you start with 512 samples, decrease it until you hear<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+clicks while playing sounds. Some systems can handle 64 easily. Some others<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+will run fine with 256 or 512.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Now if your control panel displays milliseconds instead of samples, then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+begin with a value around 15ms and tweak it using the same method.</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Cycle (F3) :</u> toggles 
+cycling. If set, transport will loop inside 
+the Start/End 
+cues.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Start, End : see 
+&quot;Sequencer&quot; section).<br>
+<u>Live (F4) :</u> toggles live mode. If set, you will record events at the 
+transport scrollbar.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If not set, you will record events at the static cursor 
+position (see <a href="#hint"><font color="#008080">hints</font></a>).<br>
+<u>Stop-Wrap (F5) :</u> if set, when you Stop transport, the cursor will 
+position exactly at the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+time index you have actually stopped (So you can resume from this exact<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+point).<br>
+<u><br>
+Play (Spacebar):</u> transport play from current position, can be used with any REC/AUT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+combination.<br>
+<u>Stop (Spacebar):</u> stop player or bouncer.<br>
+<u>Rec (F1) :</u> press to record midi events (read about &quot;Midi Mask&quot; in 
+<a href="#edit"><font color="#008080">Edit</font></a> 
+section).<br>
+<u>Aut (F2) :</u> press to record automation events of VST parameters and tempo 
+changes.</font></p>
+<p align="left"><font face="Verdana" size="2"><b><a name="hint">Hint 1 - PLAY REC AUT</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PLAY + REC : </b>record midi events 
+while playing (according to the &quot;Midi Mask&quot;)<b>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PLAY + AUT : </b>record only VST 
+parameter automation events and tempo changes.<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PLAY +REC + AUT : </b>record 
+midi (according to &quot;Midi Mask&quot;) and VST automation.&nbsp;&nbsp;&nbsp; </font></p>
+<p align="left"><font face="Verdana" size="2"><b>Hint 2 - Live on/off 
+operating modes (with PLAY and REC/AUT) :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Live on : </u>
+</b>&nbsp;It's the traditional online mode where you watch the transport scrolling<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and&nbsp;record at 
+the current position of the transport scrollbar.<b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Live off&nbsp; :</u></b> 
+special mode in which you record at any position you&nbsp;want (static)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; meanwhile the 
+song is playing or looping somewhere else, that you<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+see, or don't see. <b>
+It's an offline editing mode
+</b>(even though transport<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+is playing).<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+<br>
+Hint 3 - Offline editing modes :<br>
+</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; An offline mode is one of these two modes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Live off + 
+Transport Play<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -Transport 
+off (Stop)<br>
+<b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Offline editing is 
+about recording events when NOT playing; or recording events when<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; playing and &quot;live&quot; is set to &quot;Off&quot;.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In offline modes, the &quot;Step&quot; and &quot;Pre-release&quot; settings become very important (see Edit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+section below). These modes are adapted to intensive keyboard and mouse operation.</font></p>
+<p align="left"><b><font face="Verdana" size="2"><br>
+</font><font face="Verdana"><a name="edit">2. Sequencer Edit Section</a></font></b></p>
+<p align="left"><img border="0" src="images/edit.jpg" width="264" height="114"></p>
+<p align="left"><font face="Verdana" size="2"><u>Big counter ---:-:---:</u> displays 
+absolute midi-point counter.<u><br>
+Counter hh:mm:ss :</u> displays hh:mm:ss issued from midi points. <i>Be careful, tempo changes inside<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a project make this counter irrelevant).<br>
+<br>
+</i><u>Counter ##### Ev. :</u> displays the total 
+number 
+of events in the project.</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Step (F6):</u>&nbsp; if set, while 
+editing, the cursor automatically jumps to the next timeline position,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; depending on 
+how much the value of &quot;Quantize&quot; is.<br>
+<u>Over (F7) :</u> if set, a recorded event will overwrite (replace) an existing one at the place<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; you are recording.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If not set, you may record as many events as you want at a 
+same position.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Switch &quot;Over&quot; off if you wish to record chords.<br>
+<u>VST Routing/Sequencer (F8) :</u> toggle the sequencer/routing view in the main view 
+area.</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Quantize (Ctrl+1/2) :</u> sets 
+quantize value, including &quot;free&quot; for quantize-free operation.<br>
+<u>Channel (Ctrl+3/4):</u>&nbsp;sets midi channel for PC keyboard operation from hex 0x00 (#1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to hex 0x0F (#16).<br>
+<u>Octave (Ctrl+5/6) :</u>&nbsp;sets octave reference (also sets the center of 
+the pianoroll).<u><br>
+Zoom (Ctrl + Mouse Wheel) :</u>&nbsp;sets display zoom. Reset to default by double-clicking on it.<br>
+<u>Mode :</u>&nbsp;&nbsp;&nbsp;&nbsp; sets &quot;Note&quot; to record events, and &quot;Pattern&quot; to enter pattern calls<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (for PC Keyboard 
+operation)<br>
+<u>Velocity :</u> sets velocity for PC keyboard operation (0=random). Reset to 
+0x64 (=100 decimal)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; by double-clicking on it.<br><u>Pre-Release :</u> 
+acts as a note length reduction (points), for recording in offline modes only.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reset to 
+default by double-clicking on it. (Read <a href="#noteprerelease">
+<font color="#008080">Note</font></a> below). Also, be careful<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+that it is always less than the Quantize value (in midi points), except in some<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+special cases.<br>
+<u><a name="midimask">Midi mask :</a></u> this mask is taken into account when using a midi keyboard, 
+or importing a midi<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+file. In the case of an incoming midi message from keyboard, the message is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+acknowledged and recorded if its type is set in the Midi Mask. To set/unset 
+types,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+click on the &quot;Midi-Mask&quot; button. Tick the types that you want the input system<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to acknowledge, and 
+remove tick from those that you wish to be ignored :<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; 8 : note-off (recommended to be set)<br>
+&nbsp;&nbsp;&nbsp; 9 : note-on (set, remove for safety if you only want to use  
+knobs/faders on your<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; midi keyboard)<br>
+&nbsp;&nbsp;&nbsp; A : Aftertouch (usually set)<br>
+&nbsp;&nbsp;&nbsp; B : MidiCC (set, remove for pure VST automation operation, 
+see section 4 below)<br>
+&nbsp;&nbsp;&nbsp; C : Program Change (usually set)<br>
+&nbsp;&nbsp;&nbsp; D : Channel Pressure (usually set)<br>
+&nbsp;&nbsp;&nbsp; E : Pitchbend wheel (set, remove if the wheel is too 
+sensitive so it sometimes get<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; accidentally triggered)<br>
+&nbsp;&nbsp;&nbsp; F : System Exclusive (usually not set, since there is no 
+point in acknowledging such<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; messages in Aodix).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In the case of a midi file import operation, the imported midi events will 
+be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; acknowledged or ignored according to the &quot;Midi Mask&quot; configuration.</font></p>
+<p align="left"><font face="Verdana" size="2"><b><a name="noteprerelease">Note about note length and 
+Pre-release (editing offline) </a>:</b><br>&nbsp;&nbsp;&nbsp; If playing, 
+the event length acknowledged or recorded is the real-time length, whatever<br>&nbsp;&nbsp;&nbsp; Quantize and 
+Step settings are. The Pre-release value is taken into account only in<br>
+&nbsp;&nbsp;&nbsp; <a href="#hint"><font color="#008080">offline-modes</font></a> 
+and when recording notes (not patterns). Pre-release is the amount of points<br>
+&nbsp;&nbsp;&nbsp; that will be removed at the end of the event just before 
+recording it.<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp; How to record offline : <br>
+</b>&nbsp;&nbsp;&nbsp; set the offline mode you wish to work with, press on the key 
+you wish to record,<br>
+&nbsp;&nbsp;&nbsp; then 
+keeping it down, move the timeline downwards (see <a href="#sequencer">
+<font color="#008080">Sequencer</font></a> section) until you<br>
+&nbsp;&nbsp;&nbsp; reach the 
+wanted &quot;end of event&quot; position, then release the key.<br>
+&nbsp;&nbsp;&nbsp; The resulting recorded length will be equal 
+to key release position 'minus' the Pre-release<br>
+&nbsp;&nbsp;&nbsp; value expressed in midi points.</font></p>
+<p align="left"><b><font face="Verdana"><a name="vstlist">3. VST Instance List</a></font></b></p>
+<p align="left">
+<img border="0" src="images/instancelist.jpg" width="260" height="228"></p>
+<p align="left"><font face="Verdana" size="2"><u>To load a VST plug-in</u> to an 
+empty instance slot, just click 
+on the slot, a popup will appear and will allow you browse the plug-ins 
+found in your &quot;VST Folder&quot; directory structure (see <a href="#menuitems">
+<font color="#008080">Menu Items</font></a> section for the configuration).<br>
+<u>To mute an instance </u>(i.e. no audio out from the plug-in), click on the &quot;M&quot; button. 
+Remove mute by clicking again.<br>
+<u>To bypass an instance </u>(i.e. temporarily rout plug-in's inputs directly to it's outputs), click on 
+the &quot;B&quot; button. Click on it again to remove bypass.<br>
+<u>To open the plug-in's interface</u>, just double click on the instance slot where the plug-in in loaded.<br>
+<u>To unload a plug-in,</u> click on the Instance  
+button, and chose: &quot;Delete Instance...&quot;, or go to the 
+<a href="#routing"><font color="#008080">Routing view</font></a> 
+section, and hit the Delete key of your keyboard.</font></p>
+<p align="left"><font face="Verdana" size="2">Clicking on a slot selects the 
+instance.<br>
+Clicking on a slot while pressing Ctrl key selects the instance and scrolls the 
+routing view so as it appears in the center of it.</font></p>
+<p align="left"><font face="Verdana" size="2">Instance ID numbers 
+are expressed in hexadecimal values as they will appear in an event, please 
+refer to <a href="#s6"><font color="#008080">Event Syntaxes</font></a> in the Sequencer section.</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Instance ##:</u> shows and 
+sets the current instance; 
+you may browse instances with the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; small arrows, delete instance, import/save 
+programs/banks, open the plug-in's<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; editor 
+if available by clicking on the &quot;Instance##&quot; button.<br>
+<u>Program ###:</u> shows and sets the active program. Use small arrows or click on 
+the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Program&quot; button 
+to select program from the whole list. Click on the text box to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rename program 
+(for 
+some plug-ins, 
+you need to save the project in order to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+validate the new program&nbsp;name).</font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><b><font face="Verdana"><a name="vstparams">4. Instance Parameters</a></font></b></p>
+<p align="left">
+<img border="0" src="images/vstparam.jpg" width="262" height="196"></p>
+<p align="left"><font face="Verdana" size="2">When you select an Instance, this 
+window will display the list of the VST parameters of that Instance (if the 
+loaded plug-in allows it). You read the parameter's index number, name, value in digits/text, and value on a scaled knob. 
+There is an empty column just before the small knobs. It will display assigned 
+physical controller numbers.<br>
+<br>
+You may tweak a parameter inside this list : just point your mouse on the knob of the 
+parameter, click and move mouse up/down. To tweak slowly, hold the Ctrl key 
+while moving mouse.<br>
+If you find it difficult to locate a parameter because the list is huge, just 
+open the plug-in's editor (interface), where you should 
+locate the desired knob easily. You may tweak it from the plug-in's interface, using mouse. 
+When you do so, the parameter will be automatically displayed and highlighted in 
+the VST Parameters list. So you can close the plug-in's interface, and continue 
+tweaking the parameter from the VST Parameters list.<br>
+<br>
+Then, you can also <b>assign any controller on your midi keyboard to a parameter</b> 
+: Just double-click on the desired parameter : the &quot;rec&quot; indicator under the 
+information section appears. It means that it's ready to learn.</font></p>
+<p align="left">
+<img border="0" src="images/vstlearn.jpg" width="496" height="195"></p>
+<p align="left"><font face="Verdana" size="2">Move slightly the physical controller 
+(knob/fader) on 
+your midi keyboard that you wish to assign to the highlighted parameter. Aodix 
+will sense this move. The &quot;rec&quot; indicator disappears, which means that the 
+physical controller that you moved is now assigned to the highlighted parameter. 
+You may read now the number of the assigned physical controller in the column 
+that was initially empty.<br>
+<br>
+If you have just initiated the learn process, and you wish to cancel it : click 
+once more on the parameter without moving 
+any knob.<br>
+<br>
+If you wish to un-assign a controller off a parameter, just double-click on the 
+parameter in order to enter learn mode and hit the Delete button on your PC Keyboard.<br>
+<b><br>
+Note 1 :</b> you may assign a 
+physical controller to several parameters in the same or different instances.<br>
+<br>
+<b><a name="midiccvsautomation">Note 2</a> -</b> <b>Recording the parameter 
+changes using automation : </b>on most 
+VST plug-ins, you will be able to record automation using the VST Parameter 
+Automation. For that, you just need to turn &quot;Aut&quot; on (in
+<a href="#audiomaster"><font color="#008080">Audio Master</font></a> section), then move 
+with your mouse the knob that represents the parameter you wish to record in the 
+VST Parameters list of the plug-in's editor. If you have 
+assigned a physical controller on your midi keyboard to this knob, you can also 
+record the moves turning &quot;Aut&quot; on, and moving the physical controller. In that 
+case, you need to be careful with interference from midiCC mapping in some cases.<br>
+To make sure that no such interference happens with midiCC, you must use the 
+<a href="#midimask"><font color="#008080">Midi 
+Mask</font></a> in the <a href="#edit"><font color="#008080">Edit</font></a> Section, and remove tick from&nbsp; &quot;B&quot;.<b><br>
+</b> With &quot;Aut&quot; on you can also record Tempo setting changes (<a href="#audiomaster"><font color="#008080">Audio 
+Master section</font></a>)<br>
+<br>
+<b>Note 3 -</b> <b>MidiCC for controllers : </b>some VST plug-ins have internal 
+midi Continuous Controller mapping for their parameters. These plug-ins can 
+directly interpret incoming 
+messages generated from a physical controller on a midi keyboard. In this case you may use this native mapping instead of using 
+the automation. These commands just need &quot;REC&quot; to be turned on in order to be recorded.<br>
+Unlike the &quot;Aut&quot; automation recording, the midiCC recording only 
+records midi messages incoming from the midi keyboard, and no information 
+directly related to a plug-in's parameter. So if the internal 
+mapping of the plug-in is to be changed afterwards, and depending on the way the plug-in 
+handles its mapping matrix, the recording could be easily ruined.
+So for that reason, you may prefer to use the &quot;Aut&quot; automation, and 
+disable the midiCC message acknowledgement by changing the <a href="#midimask">
+<font color="#008080">Midi Mask</font></a>.</font></p>
+<p align="left"><b><font face="Verdana">
+<a name="infoblock">5. Info and Vumeter</a>s</font></b></p>
+<p align="left">
+<img border="0" src="images/aodix_vu_info_conf.jpg" width="234" height="233"></p>
+<p align="left"><font face="Verdana" size="2"><u>Master Output Vumeter :</u> multi-vumeter 
+showing levels at Master pins.</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Information slots :</u> these 
+are reserved for future developments...</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Project Info :<br>
+</u>&nbsp;&nbsp;&nbsp; Project : type-in the name of your project (which is the 
+name of the project file).<br>
+&nbsp;&nbsp;&nbsp; Comment : type-in a short comment.</font></p>
+<p align="left"><font face="Verdana" size="2"><u>MSG :</u><br>
+This displays the byte values of the incoming midi message</font></p>
+<p align="left">
+<img border="0" src="images/midi_msg.jpg" width="236" height="83"></p>
+<p align="left"><b><font face="Verdana"><a name="sequencer">6. Sequencer</a> </font></b></p>
+<p align="left">
+<img border="0" src="images/sequencer_expl.jpg" width="546" height="336"></p>
+<p align="left">&nbsp;</p>
+<p align="left"><font face="Verdana" size="2">To change current pattern, 
+click on the small arrows next to the pattern number. To give a name to the 
+pattern, just type it in the box under the pattern number.<br>
+<b>To scroll the pattern</b>, you can either use the scroll wheel of your mouse, 
+or grab with your mouse any position in the column of hh:mm:ss indexes.</font></p>
+<p align="left"><b><font face="Verdana" size="2">
+<a name="s1">6.1. Sequencer : track gadgets</a><br>
+</font></b><br>
+<img border="0" src="images/track_expl.jpg" width="382" height="237"></p>
+<p align="left"><font face="Verdana" size="2">Click on the M button to mute/unmute 
+track.<br>
+Click on the S button to solo/unsolo track.<br>
+You may give a name to the track by typing it in the box where &quot;---&quot; appears.<br>
+The midi event sensor is triggered by a midi event.</font></p>
+<p align="left"><font face="Verdana" size="2">
+<br>
+<b><a name="s2">6.2. Sequencer : pattern, timeline, cues and markers</a></b></font></p>
+<p align="left"><font face="Verdana" size="2">Pattern gagdets :</font></p>
+<p align="left">
+<img border="0" src="images/patterngadg.jpg" width="348" height="144"></p>
+<p align="left"><font face="Verdana" size="2">select the pattern with the arrow 
+gadgets. This pattern is called &quot;Arrange&quot;, you may rename it.</font></p>
+<p align="left"><font face="Verdana" size="2">Timeline, cues and markers :</font></p>
+<p align="left" dir="ltr">
+<img border="0" src="images/aodix_marker.jpg" width="417" height="598"></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2">This column displays the 
+timecode of the pattern. You may place markers here.</font></p>
+<p align="left" dir="ltr"><u><font face="Verdana" size="2">S</font></u><font face="Verdana" size="2"><u>tart/End Cues :</u> 
+these are the cues for looping. When &quot;Cycle&quot; is engaged in the
+<a href="#audiomaster"><font color="#008080">Audio Master</font></a> section, 
+the player will loop within these cues. To move cues, just click on their label 
+and drag up/down.<br>
+<u>Markers :</u> you can define up to 255 markers in a pattern. The markers 
+allow you to mark positions for better pattern reading, and are used as the references 
+in pattern calls. The markers will be labeled sequentially from 0x01 to 0xFF 
+(hexadecimal). To create a marker, just double-click in the left-most column 
+(the one showing ---:- indexes). To move a marker, just click on its label and 
+drag it up/down. To delete a marker, just double-click on its label.<br>
+<u>Stop Marker :</u> the Stop Marker makes transport and bouncing stop when the 
+marker is reached. To create the Stop Marker (only one is allowed in each 
+pattern), press Ctrl and double-click in the left-most column (showing ---:- 
+indexes). To remove it, double-click on its label. You must create the Stop 
+Marker before using the &quot;Render to Stop Marker&quot; feature (<a href="#menuitems"><font color="#008080">Menu 
+Items</font></a> section).<br>
+<br>
+<b>Note 1 :</b> Cues and markers positioning is sensitive 
+to the Quantize setting in <a href="#edit"><font color="#008080">Edit</font></a> section.<br>
+<b>Note 2</b> : when using pattern calls, the Start/End cues and the Stop Marker that 
+are located inside the pattern being called are ignored.</font></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2"><b><br>
+<a name="s3">6.3.
+Sequencer : mouse operating mode - Block / Object</a><br>
+<br>
+</b>In each track, there are two areas : left 
+area and right area. The mouse pointer looks different whether it is pointing to the 
+left or the right area or the track.</font></p>
+<p align="left"><font face="Verdana" size="2"><u>The left section is for block 
+operating mode :<br>
+</u>if you click in this section, the sequencer will understand that you 
+want to select a block.<br>
+With a selected block, you can copy block (Ctrl+C), cut block (Ctrl+X), and 
+paste block at cursor position (Ctrl+V).<br>
+</font>
+<img border="0" src="images/mouse_modes.jpg" width="127" height="274"></p>
+<p align="left"><font face="Verdana" size="2"><u>The right section is for object 
+operating mode :<br>
+</u>if you click in this section, the sequencer will understand 
+that you want to move this object or resize it.<br>
+- To move, just click anywhere in 
+the right section, except at the object bottom, and drag the<br>
+&nbsp;&nbsp; object.<br>
+- To relocate an event, i.e. move it across tracks, but not changing the time, press 
+and hold<br>
+&nbsp;&nbsp; Shift, while dragging from the right section (useful if 
+you have superimposed events).<br>
+- To resize an object (only possible with note events and pattern calls), click 
+inside the<br>
+&nbsp;&nbsp; right section at the bottom of the object, and drag up or down.</font></p>
+<p align="left">
+<img border="0" src="images/mouse_modes2.jpg" width="111" height="199">&nbsp;
+<img border="0" src="images/mouse_modes3.jpg" width="152" height="226"><font face="Verdana" size="2"><br>
+<br>
+<b>Note 1 : </b>block operation is sensitive to the quantize setting<b>.<br>
+Note 2 :</b> move/resize does not take into account the quantize setting.</font></p>
+<p align="left"><b><font face="Verdana" size="2">
+<a name="s4">6.4. Sequencer : browsing</a></font></b></p>
+<p align="left"><font face="Verdana" size="2">Here are the mouse and keyboard 
+commands or operations for browsing. For reference, we suggest you open the
+<a href="quickshortcuts.htm"><font color="#008080">Quick Shortcut Guide</font></a> and print it.<br>
+<u><br>
+elementary browsing :</u> left, right, up, down arrows.<u><br>
+<br>
+Change pattern :</u> click on the small arrows next to pattern number, or use 
+Numpad + and - keys.<br>
+<br>
+<u>Move cursor to directly to another track :</u> Tab or Shift + Tab.<br>
+<br>
+<u>Move cursor 8 tracks to the left/right :</u> Ctrl + left/right arrows<br>
+<br>
+<u>Fast scroll pattern up/down :</u> page up/page down. You may also use the mouse : for accurate positioning, grab the 
+timeline column displaying hh:mm:ss indexes, and drag it up/down. For inaccurate 
+positioning, use you mouse wheel.<br>
+<br>
+<u>Fast move to 000:0 or to last event in pattern :</u> Ctrl + page up/ page 
+down.<br>
+<br>
+<u>Move cursor accurately to previous event / next event </u>: Ctrl + up/down 
+arrows.<br>
+<br>
+<u>Move cursor to Start/End Cues :</u> use Home and End keys.<br>
+<br>
+<u>Position cursor accurately with mouse :</u> double-click at any 
+position avoiding the right section of an object. The cursor will move to the note header of that exact position.<br>
+<br>
+<b>Note : </b>up/down browsing is sensitive to the quantize setting.</font></p>
+<p align="left"><font face="Verdana" size="2"><b>
+<a name="s5">6.5 Sequencer : Pattern 
+arrangement</a></b></font></p>
+<p align="left"><font face="Verdana" size="2"><u>Basic operations :</u><br>
+&nbsp;&nbsp;&nbsp; - Del : clear event, leaves the place empty.<br>
+&nbsp;&nbsp;&nbsp; - Insert, Backspace : insert/delete event, moves all 
+following events in the track<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; one step down/up.<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + Insert/Backspace : insert/delete line, moves all 
+following events in the pattern<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; one step down/up.</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Block operations :</u><br>
+To select a block, point the mouse at the point where the upper-left corner of 
+the block would be. Make 
+sure you are pointing in the left-half of the track. Click, and drag until your 
+block is drawn. Release mouse. The block is marked. If you want to mark ALL the 
+events inside the pattern, just press Ctrl + A. If you want to mark the block 
+only using tour keyboard keyboard, use Ctrl + B/E on upper-left/bottom-right.<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + C/X&nbsp;&nbsp;&nbsp; : copy/cut marked block<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + V : paste the block at current cursor position<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + F1/F2 : -/+1 value change of the byte where the 
+cursor is for all the block<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+It is intended mainly for block transposition (cursor must be set on the note<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+name or the key byte) and velocity modification (cursor on velo byte).<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + Q : rearrange notes in block according to quantize 
+setting</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Setting Markers and Cues :</u><br>
+&nbsp;&nbsp;&nbsp; - Ctrl + Home/End : set Start/End Cues<br>
+&nbsp;&nbsp;&nbsp; - double click in leftmost timeline column : set/delete 
+marker<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + double click in leftmost timeline column : set/delete 
+the stop marker<br>
+&nbsp;</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Object operations :<br>
+</u>To manipulate events as object, click on the object's right section. Hold 
+click and :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -  
+drag object : move object<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Shift + 
+drag object : move object horizontally (lock vertically)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Ctrl + drag 
+object : move object quantize free<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - at 
+object's bottom + drag up/down = resize object (length)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 
+double-click : delete object</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Special keys :<br>
+</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 1 = writes a resizable jump 
+event.<u><br>
+</u>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; - Enter = writes a program change command. 
+This is a midi 0xC message, and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; param1 = new 
+program (in hex). Read about <a href="#s6"><font color="#008080">Event Syntaxes</font></a>.</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Parameter editing :</u> <br>
+Every single parameter of an event is 
+text-editable.<br>
+Just browse to it, use Ctrl + up/down arrows to stick to the event, and left/right 
+arrows to reach the desired figure. Now type-in the new value with your PC keyboard.<br>
+<br>
+<u><a name="s51">Typing-in note events and pattern calls :</a><br>
+<br>
+</u>- With your midi Keyboard, you will only be able to enter note events, and 
+that needs no<br>
+&nbsp;&nbsp; additional explanation.<br>
+<br>
+- With your PC keyboard, you will enter note events or pattern calls according 
+to the &quot;Mode&quot;<br>
+&nbsp;&nbsp; setting in the <a href="#edit"><font color="#008080">Edit</font></a> 
+Section.<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Note events with PC keyboard :your keyboard type 
+must be set properly in the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#menuitems">
+<font color="#008080">File &gt; Configuration menu</font></a>. Of course, &quot;Mode&quot; in Edit 
+section must be set to &quot;Note&quot;. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Note layout on PC 
+keyboard :</b><br>
+&nbsp;&nbsp;&nbsp;
+</font><img border="0" src="images/keyb.jpg" width="474" height="186"></p>
+<p align="left"><font face="Verdana" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Entering Pattern calls : 
+&quot;Mode&quot; in the Edit section must be set to &quot;Pattern&quot;.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Just enter the pattern call with any letter key on the PC keyboard, then specify 
+the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; correct pattern number 
+(the one being called) by positioning the cursor to the first<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parameter next 
+to the &quot;Pat&quot; header, then specify the right marker from which the called<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pattern 
+will begin playing (see &quot;<a href="#s6"><font color="#008080">Sequencer : Event syntaxes</font></a>&quot; section).</font></p>
+<p align="left"><font face="Verdana" size="2"><b>
+<a name="s6">6.6 Sequencer : Event syntaxes</a></b></font></p>
+<p align="left">
+<img border="0" src="images/aodix_syntaxes.jpg" width="398" height="499"></p>
+<p align="left">
+<b><font face="Verdana" size="2">Blue event = note event<br>
+syntax : NNN II 00 KK VV</font></b></p>
+<p align="left">
+<font face="Verdana" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NNN = note 
+name<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II = Instance number (hex)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00 = zero 
+byte (not used)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; KK = key 
+(hex)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VV = velocity 
+(hex)</font></p>
+<p align="left">
+<font face="Verdana" size="2"><b>Red event = Automation<br>
+syntax : Aut II NN NN VV<br>
+</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II = Instance 
+number (hex)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NN NN = VST 
+parameter Number (hex)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VV = value 
+of the parameter (hex)</font></p>
+<p align="left">
+<font face="Verdana" size="2"><b>Light-brown event = generic Midi Event (mostly 
+used for program change)<br>
+syntax: Mid II MC P1 P2&nbsp;&nbsp; 
+</b></font></p>
+<p align="left">
+<font face="Verdana" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II = Instance number (hex)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MC = M midi 
+message number and C midi channel (both hex)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+e.g. C0 is a program change<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P1 = param1 
+(hex)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; P2 = Param2 
+(hex)<br>
+<br>
+&nbsp;&nbsp;&nbsp; In detail (according to the value of M) :<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; M = 8 : note-off command : Aodix 
+doesn't show these commands, but it is materialized<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+by the object's bottom.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; M = 9 : note-on command : P1 is key, and P2 is velocity<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; M = A : aftertouch : P1 is key, and 
+P2 is touch<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; M = B : midi CC : P1 
+is the controller number, and P2 is the controller value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; M = C : program change : P1 is the new program. P2 is nothing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; M = D : channel pressure : P1 is 
+pressure, P2 is nothing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; M = E : pitch bend : P1 is lsb 
+(7bit), and P2 is msb (7bit)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; M = F : System (non-musical) messages 
+such as keep alive (&quot;Active Sensing&quot;) etc...</font></p>
+<p align="left">
+<font face="Verdana" size="2"><b>Green event = Pattern call<br>
+syntax : Pat PP MM TT VV<br>
+</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PP = pattern 
+number (hex)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MM = marker 
+number&nbsp; (hex) (playing the called pattern begins at that marker.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+00 means that the called pattern will begin playing at 000:0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TT = transposing 
+(hex) (0x80 = no transpose)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VV = velocity 
+scaling (hex) (0x80 = no scaling, 0x40 = 50%... etc)<br>
+Cues, jumps and Stop Marker from the called pattern are ignored 
+in a pattern call event.<br>
+Tempo changes from the called pattern are applied, they affect the global tempo. </font></p>
+<p align="left">
+<font face="Verdana" size="2"><b>Note : </b>each track can be loaded with any 
+kind of events at the same time, even superimposed and overlapped.</font></p>
+<p align="left">
+&nbsp;</p>
+<p align="left">
+<b>
+<font face="Verdana" size="2">
+<a name="s7">6.7 Pianoroll</a></font></b></p>
+<p align="left">
+<img border="0" src="images/pianoroll.jpg" width="255" height="505"></p>
+<p align="left">
+<font face="Verdana" size="2">Pianoroll is a useful feature, you may easily see 
+the chords as they are recorded in the same track. The pianoroll displays the 
+note events of the selected track. you may resize it to see more octaves. The 
+view center of the pianoroll is the octave selected in the <a href="#edit">
+<font color="#008080">Seq. Edit</font></a> 
+section.</font></p>
+<p align="left">
+<font face="Verdana" size="2">
+<br>
+</font><b><font face="Verdana"><a name="routing">7. Routing</a></font></b></p>
+<p align="left">
+<font size="2" face="Verdana">Access that view by clicking on the &quot;Routing&quot; 
+button in the <a href="#edit"><font color="#008080">Edit</font></a> section. That button <b>toggles </b>Sequencer and Routing.<br>
+</font><img border="0" src="images/edit2.jpg" width="331" height="147"><br>
+<img border="0" src="images/routing.jpg" width="500" height="359"></p>
+<p align="left">
+<font size="2" face="Verdana">
+<br>
+Use this view to load/</font><font size="2" face="Verdana">unload plug-ins and draw connections between instances, and also to configure the 
+Master Output pins.</font></p>
+<p align="left">
+<font face="Verdana" size="2">To load a plug-in, just double-click anywhere in 
+the empty background. The plug-in will load in the first instance available 
+sequentially. To unload a plug-in, just click on the plug-in box object and hit 
+Delete on your keyboard.</font></p>
+<p align="left">
+<font face="Verdana" size="2">If your routing view is out of range, you'll need 
+to click on a used instance slot in the Instance List, while holding the Ctrl 
+key. This will scroll the view so as the selected instance gets within viewing 
+range.</font></p>
+<p align="left" dir="ltr"><b><font face="Verdana">7.1 Drawing wires</font></b></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2">When you load a VST 
+plug-in in an instance slot, the VST plug-in appears as an object with red 
+gadgets at the bottom of the object (outputs) and blue gadgets (inputs) when 
+available.<br>
+All plug-ins outputs are default routed to the <a href="#r2">
+<font color="#008080">Master Output</font></a> object if the &quot;Instance to 
+Master Autolink&quot; option 
+is selected in the configuration window. Which means that 
+all plug-ins' outputs are connected to the Master Output connectors, which are 
+rendering pins (blue or green).<br>
+You may rout any plug-in's output to any other plug-in's input. But circular 
+reference is not allowed (it can crash the software). <br>
+All connections must eventually converge to the Master Output.<br>
+To draw a new wire, click on the output you want to issue the wire from, then 
+drag the wire extremity until you reach the aimed input, or Master Output pin.<br>
+<br>
+<br>
+<img border="0" src="images/wire1.jpg" width="314" height="250"></font></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2">
+<br>
+</font><img border="0" src="images/wire2.jpg" width="313" height="229"></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2">To remove a wire, just 
+double-click on the arrow in the middle of it.<br>
+To change the gain of a wire, just click on the arrow in the middle of it, and 
+move the slider.<br>
+</font><img border="0" src="images/wiregain.jpg" width="153" height="162"></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2">To draw or remove all wires related to same instance, use Ctr + click and drag 
+(draws all), or Ctrl + double-click on first on arrow (removes all).</font></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2"><b>Note :</b> you may 
+issue several wires from the same pin !<br>
+<br>
+</font><br>
+<b><font face="Verdana"><a name="r2">7.2 Configuring Master Output pins</a></font></b></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2">These pins are rendering 
+pins. They define the &quot;mixing-points&quot; to be rendered. How they are rendered is 
+explained in the <a href="#menuitems"><font color="#008080">Menu Items</font></a> 
+section. <br>
+<br>
+Before configuring the 
+Master Output pins, note that some of them are blue, some of them are grey, 
+and one of them is highlighted.<br>
+(Remember, to see this, you must be viewing the &quot;Routing&quot; view)<br>
+<br>
+<br>
+<u>Blue</u> means that the pin is currently connected to audio.<br>
+<u>Grreen</u> means that the pin is currently NOT connected to audio.<br>
+<u>Highlight</u> is just here to follow your clicks. It helps when configuring 
+all your pins one-shot.</font></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2">In order to configure a 
+Master Output pin, just click on it, and select the audio channel for that pin.
+Chose &quot;No Output&quot; if you want no audio for this pin.</font></p>
+<p align="left" dir="ltr">
+<img border="0" src="images/output.jpg" width="295" height="193"><font face="Verdana" size="2"><br>
+&nbsp;</font></p>
+<p align="left" dir="ltr"><b><font face="Verdana"><a name="inputpins">7.3 
+Configuring and Using Master Input Pins</a></font></b></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2">Master Input pins are 
+real-time ASIO audio inputs, and work in a 
+similar way to Output pins, except that they are set in two rows.</font></p>
+<p align="left" dir="ltr">
+<img border="0" src="images/input1.jpg" width="293" height="201"></p>
+<p align="left" dir="ltr">
+<img border="0" src="images/input2.jpg" width="311" height="172"></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2">Upper row : click on an 
+upper pin to define it as an ASIO audio input of your soundcard.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+(pins connected to audio appear darker than the others)<br>
+Lower row : use the related lower pin to draw wires (click + drag)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</font></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2"><b>Note :</b> no audio 
+from the Master Input pins is rendered in a &quot;bounce&quot; operation, since bouncing 
+(rendering) is not real-time (in order to benefit from full CPU power).</font></p>
+<p align="left" dir="ltr"><b><font face="Verdana" size="2"><a name="objectpins">7.4 Object pins</font></b></a></p>
+<p align="left" dir="ltr">
+<img border="0" src="images/objectpins.jpg" width="522" height="330"></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2">Audio inputs and outputs 
+are to be connected with other instances and Master input and output. Do not 
+create circular references.</font></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2">Midi inputs and outputs 
+are to be connected with other instances. It is intended for advanced usage in 
+very rare cases.</font></p>
+<p align="left" dir="ltr"><font face="Verdana" size="2">Mute and Bypass are the 
+same as in the VST Instance List.</font></p>
+<p align="left" dir="ltr"><b><font face="Verdana"><a name="menuitems">8. Menu 
+Items</a></font></b></p>
+<p align="left">
+<img border="0" src="images/menu1.jpg" width="183" height="250"></p>
+<p align="left"><font face="Verdana" size="2"><b>File menu<br>
+<br>
+</b><u>New :</u> clears current project<br>
+<u>Open :</u> opens an Aodix v4 project file<br>
+<u>Save (Ctrl + S) :</u> saves project (Aodix file format)<br>
+<u>Save as :</u> saves project as... (Aodix v4 format).<br>
+<br>
+<u><a name="bounce">Bounce :</a></u> renders the 
+project to one or several 
+32-bit float IEEE file.<b><br>
+Only Master Output pins that have at least one incoming wire will 
+be rendered. </b>It doesn't matter if they are blue or green.<br>
+<br>
+<img border="0" src="images/bounce.jpg" width="389" height="276"><br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; Filename : type or browse for the filename of the file you're 
+about to render.</font></p>
+<p align="left"><font face="Verdana" size="2">&nbsp;&nbsp;&nbsp; Options :<br>
+&nbsp;&nbsp;&nbsp; - &quot;Render Cue Range&quot; : if set, renders the part of the project within the 
+Start/End cues.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+In all cases, it stops at the STOP Marker.<br>
+&nbsp;&nbsp;&nbsp; - &quot;Multifile&quot; : tick this option if you want the 
+bouncing results to be stored in several<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 32-bit float IEEE mono-channel files. In 
+this case, there will be one file for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; each wired Master Output pin. Otherwise, 
+the results will be stored 
+in<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; one single 32-bit IEEE&nbsp;interleaved file.</font></p>
+<p align="left"><font face="Verdana" size="2">&nbsp;&nbsp;&nbsp; The output format of the rendered 
+file is Raw IEEE 32-bit float :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - resolution : 32-bit float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - endianness : none<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - start position of audio data : 0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - rate : the one used when rendering<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - number of channels : depends on 
+&quot;Multi-file&quot; status and on pin wiring :<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+If &quot;Multi-file Rendering&quot; was not ticked, then the number of channels is the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+number of Master Output pins that are wired.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+If &quot;Multi-file Rendering&quot; was ticked, then the number of channels is 1 (but<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+you get several files). <br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp; Press Start to begin rendering, Stop to stop it at once.</font></p>
+<p align="left"><font face="Verdana" size="2">&nbsp;&nbsp;&nbsp; Note 1 : when 
+the Bounce dialog is open, Aodix releases the ASIO subsystem, until<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+the dialog is closed.<br>
+<br>
+&nbsp;&nbsp;&nbsp; Note 2 : although Aodix uses all the available CPU power 
+while rendering, the CPU load<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+displayed in the Audio Master section is what Aodix would use for real-time<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+calculations (i.e. when playing the song).</font></p>
+<p align="left"><font face="Verdana" size="2">&nbsp;&nbsp;&nbsp; Note 3 : when 
+rendering, no audio from the Master Input will be taken into account,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+since rendering uses all available cpu in order to be faster than real-time,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+while Master Inputs can only run real-time.</font></p>
+<p align="left"><font face="Verdana" size="2"><u>Import midi file :</u> imports a midi file in two different ways<br>
+&nbsp;&nbsp;&nbsp; - Spread midi channels across multiple instances : &quot;YES&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+channel information will be imported and converted to instance ID. Used 
+instances <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+will range beginning from currently selected instance. This is useful if you want to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; use different plug-ins to reproduce the 
+different channels.<br>
+&nbsp;&nbsp;&nbsp; - Spread midi channels across multiple instances :&quot;NO&quot;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+channel information is kept. Used instance is only currently selected instance.<br>
+<br>
+&nbsp;&nbsp;&nbsp; Midi import is processed according the the Midi Mask in 
+<a href="#edit"><font color="#008080">Edit</font></a> Section.</font></p>
+<p align="left"><u><font face="Verdana" size="2">Configuration menu</font></u></p>
+<p align="left">
+<img border="0" src="images/config.jpg" width="404" height="349"></p>
+<p align="left"><font face="Verdana" size="2">User Name : Type your name here</font></p>
+<p align="left"><font face="Verdana" size="2">ASIO Current Driver : select the 
+proper ASIO driver<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sample rate : specify the sample rate 
+of the project</font></p>
+<p align="left"><font face="Verdana" size="2">VST Paths : 
+displays and sets the folder roots (upto 4) in which all your VST plug-ins are installed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Aodix will seek in these roots and in their subfolders.<br>
+&nbsp;</font></p>
+<p align="left">
+<img border="0" src="images/config2.jpg" width="406" height="352"></p>
+<p align="left"><font face="Verdana" size="2">
+<br>
+Keyboard Layout : sets your keyboard type : QUERTY, AZERTY or QUERTZ.<br>
+Instance to Master Autolink : if checked, Aodix will automatically wire the 
+instances to the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Master Output when you load a VST.<br>
+Run in Fullscreen Mode : if checked, Aodix interface will use all the screen 
+(needs restart).</font></p>
+<p align="left"><font face="Verdana" size="2">Midi Input : list of all the Midi 
+input devices available<br>
+Open Midi In Devices : check this box if you want Aodix to open these devices.<br>
+Override Channel messages : check this box if you want to force the incoming 
+channel value to the one<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+specified in the <a href="#edit"><font color="#008080">Edit</font></a> 
+section<br>
+Override Note Velocity Messages : check this box if you wan to force the 
+incoming velocity value to the one<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+specified in the <a href="#edit"><font color="#008080">Edit</font></a> 
+section.</font></p>
+<p align="left"><font face="Verdana" size="2"><br>
+<u>Exit :</u> exits Aodix.</font></p>
+<p align="left"><b><font face="Verdana" size="2">Edit menu</font></b></p>
+<p align="left"><img border="0" src="images/menu2.jpg" width="203" height="188"></p>
+<p align="left"><font face="Verdana" size="2"><u>Undo Clipboard Operation :</u> undoing only last 
+block operation 
+(Cut, Copy, Paste).<br>
+<u>Cut / Copy / Paste (Ctrl + X / C / V) :</u> Cut, Copy and paste a block.<br>
+<u>Select All (Ctrl + a) :</u> selects all events in the pattern as a block.<br>
+<u>Quantize Notes in block (Ctrl +Q) : </u>rearranges all notes according to 
+quantize setting.<br>
+<u>Randomize Data in block (Ctrl+R)</u> : randomizes the data corresponding to 
+the byte where the cursor is.<br>
+<u>Interpolate Data in block (Ctrl+I)</u> : interpolates the data corresponding 
+to the byte where the cursor is.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+the block must be selected exactly between first and last event to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+be taken into account. You need to select mark the block<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+with Ctrl+B and Ctrl+E and not with mouse.</font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><b><font face="Verdana" size="2">Help menu</font></b></p>
+<p align="left"><img border="0" src="images/menu3.jpg" width="179" height="85"></p>
+<p align="left"><font face="Verdana" size="2"><u>Contents :</u> opens this help file<br>
+<u>About :</u> information about Arguru Software.<br>
+<u>Arguru Software Website :</u> link to the website</font></p>
+
+</body>
+
+</html>

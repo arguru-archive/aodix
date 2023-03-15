@@ -1,0 +1,128 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Shortcut List</title>
+</head>
+
+<body style="font-family: Verdana; font-size: 10px">
+
+<p dir="ltr"><u><b><font face="Verdana" size="2">Aodix v4 Quick Reference List</font></b></u></p>
+<p dir="ltr"><b><font face="Verdana"><font size="1">Audio Master and Edit :<br>
+</font>&nbsp;&nbsp;&nbsp;&nbsp;
+</font>
+</b><font face="Verdana">- F Keys :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F1 : REC&nbsp;&nbsp;&nbsp; F2 : Aut&nbsp;&nbsp;&nbsp;&nbsp; 
+F3 : Loop&nbsp;&nbsp;&nbsp;&nbsp; F4 : Live&nbsp;&nbsp;&nbsp;&nbsp; F5 : 
+Stop-Wrap<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F6 : Step&nbsp;&nbsp; F7 : Over&nbsp;&nbsp;&nbsp; F8 : Routing/Sequencer view<br>
+&nbsp;&nbsp;&nbsp;
+- Spacebar : Play / Stop.<b><font size="1"><br>
+</font>
+</b>&nbsp;&nbsp;&nbsp; - Ctrl + 1/2 : set quantize to previous/next value<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + 3/4 : set master channel to previous/next value<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + 5/6 : set octave reference to previous/next value<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + Mouse Wheel : change zoom</font></p>
+<p dir="ltr"><font face="Verdana"><b><font size="1">Sequencer Browsing:<br>
+</font>
+</b>&nbsp;&nbsp;&nbsp; - arrows : browse sequencer (elementary)<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + arrows up/down = position cursor exactly on 
+previous/next event in track<br>
+&nbsp;&nbsp;&nbsp; - page up, page down : scroll page up and down<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + page up/down : go to position 000:0/last event 
+position in pattern<br>
+&nbsp;&nbsp;&nbsp; - Tab / Shift + Tab : move to next / previous track<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + left/right arrows : browse 8 tracks left/right<br>
+&nbsp;&nbsp;&nbsp; - Home, End : move to Start/End Cues<br>
+&nbsp;&nbsp;&nbsp; - Double-click (<b>not</b> on object's right section) : set 
+cursor at exact note header location<br>
+&nbsp;&nbsp;&nbsp; - Numpad + / -&nbsp; : pattern navigation next/previous 
+pattern<br>
+&nbsp;&nbsp;&nbsp; - Enter on a patter call event header : go to the called 
+pattern<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + Enter : get back to the initial pattern <br>
+<br>
+</font>
+<b><font face="Verdana" size="1">Pattern Arrangement:<br>
+</font>
+</b><font face="Verdana">&nbsp;&nbsp;&nbsp; - Del : clear event<br>
+&nbsp;&nbsp;&nbsp; - Insert/Backspace : insert/delete event moving following 
+events in track down/up<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + Insert/Backspace : insert/delete line moving 
+following events in pattern down/up<br>
+&nbsp;&nbsp;&nbsp; - Block operations (to select block, point mouse at left 
+half 
+of a track, draw rectangle or use<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ctrl + B/E)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Ctrl + A : Select all events in the pattern as a block <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Ctrl + C/X/V : copy/cut/paste block<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Ctrl + 
+F1/F2 : decrease/increase of 1 unit the byte where the cursor is located, for 
+all the block<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+(transpose, -1/+1 velocity,...)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Ctrl + Q : rearrange block by 
+quantizing notes inside it<br>
+&nbsp;&nbsp;&nbsp; - Object operations (point at right half of an object)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Click + 
+drag object : move object<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Shift + click + 
+drag object : move object, locking vertical moves<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Ctrl + click + drag object : move 
+object, quantize-free<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Click at 
+object's bottom + drag up/down = resize object (length)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 
+Double-click : delete object<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + Home/End : set Start/End Cues<br>
+&nbsp;&nbsp;&nbsp; - Double-click in the left-most timeline column : create/delete marker<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + double-click in the leftmost timeline column : 
+create/delete STOP marker<br>
+&nbsp;&nbsp;&nbsp; - Special Commands :<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - 1 : write a Jump event<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Enter : write a midi 0xC program change command (param1 = new 
+program in hex)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; - Parameter editing : every parameter of an event is 
+editable.<br>
+<br>
+<b><font size="1">Syntaxes:</font></b><font size="1"><br>
+</font>&nbsp;&nbsp;&nbsp; - Note Event syntax: NNN II 00 KK VV<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NNN = note 
+name; II = Instance number (hex); KK = key (hex); VV = velocity (hex)<br>
+&nbsp;&nbsp;&nbsp; - Automation Event syntax : Aut II NN NN VV<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II = Instance 
+number (hex); NN NN = VST Controller Number (hex); VV = value (hex)<br>
+&nbsp;&nbsp;&nbsp; - Pattern call syntax : Pat PP MM TT VV<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PP = pattern 
+(hex) MM = marker (hex) TT = transposing (0x80 = no transpose)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VV = velocity 
+scaling (0x80 = no scaling, 0x40 = 50%... etc).<br>
+<br>
+<b><font size="1">Changing values in boxes and knobs :</font></b><font size="1"><br>
+</font>&nbsp;&nbsp;&nbsp;
+- Click and Move mouse on value : change/select value<br>
+&nbsp;&nbsp;&nbsp;
+- Ctrl + Click and Move mouse on value : tweak value (slower and more accurate).</font></p>
+
+<p dir="ltr"><b>Routing Operations</b><font face="Verdana"><b> :<br>
+</b>&nbsp;&nbsp;&nbsp; - Double click in Routing view : load instance<br>
+&nbsp;&nbsp;&nbsp;
+- Click on instance object and press &quot;Del&quot; : unload instance<br>
+&nbsp;&nbsp;&nbsp; - Click on instance output pin and drag to input pin : draw 
+wire<br>
+&nbsp;&nbsp;&nbsp; - Double-click on the arrow in the middle of the wire : delete wire<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + click/double-click on instance output pin/wire arrow : draw/delete 
+all wires of instance<br>
+&nbsp;&nbsp;&nbsp; - Click and drag on the arrow in the liddle of the wire : 
+adjust wire gain<br>
+&nbsp;&nbsp;&nbsp; - Click on Master Input/Output pin : define audio device for the 
+pin<br>
+&nbsp;&nbsp;&nbsp; - Ctrl + click on the slot of a used instance in the list : 
+center routing view on instance</font></p>
+<p dir="ltr"><b><font face="Verdana"><font size="1">File Operation :</font><font size="2">
+</font> </font>
+</b><font face="Verdana">Ctrl + S : Save project</font>.</p>
+
+</body>
+
+</html>

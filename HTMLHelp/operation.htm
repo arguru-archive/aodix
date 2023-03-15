@@ -1,0 +1,304 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Operation</title>
+</head>
+
+<body>
+
+<p align="center"><b><font face="Verdana">Aodix Operation<br>
+<br>
+<font size="2">This section guides you in the process of creating, developing and finishing 
+your project<br>
+</font></font><font face="Verdana" size="2" color="#FF0000">Please open the
+<a href="quickshortcuts.htm"><font color="#008080">Quick Shortcut List</font></a></font><font face="Verdana" size="2" color="#008080">
+</font><font face="Verdana" size="2" color="#FF0000">and print it for quick 
+reference</font></b></p>
+<p><b><font face="Verdana"><a name="pleasecheck">Please check the following 
+items :</a></font></b></p>
+<p><font face="Verdana" size="2">- Aodix is installed and running<br>
+- that there's at least one VST Instrument installed in a folder (where VST 
+plug-ins should be)<br>
+- that this VST folder is properly specified in the Aodix Configuration Menu<br>
+- that the PC keyboard type is properly specified in the Aodix Configuration 
+Menu<br>
+- that the ASIO driver is properly specified in the ASIO Configuration box<br>
+- that your ASIO subsystem is properly installed and running (read the audio 
+card's docs,<br>
+&nbsp;&nbsp; or use an ASIO/WDM wrapper if your sound card don't support 
+natively ASIO)<br>
+- that the Master Output pins in the &quot;Routing&quot; view are assigned to audio 
+outputs.<br>
+- that you have the </font><font face="Verdana" size="2" color="#FF0000">
+<a href="quickshortcuts.htm"><font color="#008080">Quick Shortcut List</font></a></font><font face="Verdana" size="2"> 
+printed for quick reference<br>
+<br>
+All those steps are detailed in the </font>
+<font size="2" color="#FF0000" face="Verdana">
+<a href="gettingstarted.html"><font color="#008080">Getting Started</font></a><b><font color="#008080">
+</font></b></font><font face="Verdana" size="2">section.<br>
+If all is ok, you may go further...otherwise, please read the
+<a href="troubleshooting.htm"><font color="#008080">Troubleshooting Checklist</font></a>.</font></p>
+<p><b><font face="Verdana"><a name="loadvst">1. First step : loading plug-ins to instance slots 
+and wiring</a></font></b></p>
+<p><font face="Verdana" size="2">Decide about what VST instruments and 
+effects you are going to use. First, let's worry about VST instruments.<br>
+Switch from &quot;Sequencer&quot; to &quot;Routing&quot; view (<a href="detailed_desc.html#edit"><font color="#008080">Seq. 
+Edit</font></a> section), point  
+mouse at any empty slot of the <a href="detailed_desc.html#vstlist">
+<font color="#008080">VST Instance List</font></a>, and click. If everything is 
+properly configured, under the mouse you will see a small tree listing that reflects the 
+structure of your VST Plug-ins folder. Select the plug-in you wish to load from 
+there.<br>
+<br>
+As soon as the plug-in is loaded, it will appear as a box object (since we are 
+looking at the <a href="detailed_desc.html#routing"><font color="#008080">&quot;Routing&quot; view</font></a>. 
+If it is not automatically wired to the Master Output, draw the wires as 
+explained in the&nbsp; <a href="detailed_desc.html#routing"><font color="#008080">&quot;Routing&quot; view</font></a><font color="#008080">
+</font>section.<br>
+<br>
+In the case of a multi-output VST instrument, every output pin will be 
+sequentially wired to a pin of the Master Output. Be careful because if some 
+used Master Output pins are not assigned to audio outputs, you could hear no 
+audio. So make sure they are assigned to audio outputs, or change the way the 
+wires are connected...</font></p>
+<p><font face="Verdana" size="2">We recommend that you begin with simple schemes.<br>
+Schemes including VST effects are explained in <font color="#008080">
+<a href="#finishing"><font color="#008080">Step 4 : Mastering and Finishing 
+Project</font></a></font><a href="#finishing"><font color="#008080">.</font></a></font></p>
+<p><font face="Verdana" size="2">Now that basic wiring is ok, you may begin to record your tracks !</font></p>
+<p><b><font face="Verdana"><a name="rec">2. Step 2 : recording first tracks</a></font></b></p>
+<p><font face="Verdana" size="2"><b>2.1. case 1. load a midi project<br>
+</b>Use the importation function from &quot;File &gt; Import MIDI File ...&quot; menu item.<br>
+You will be asked if you want to spread channels over several instances. Please 
+report to section <a href="detailed_desc.html#menuitems"><font color="#008080">Menu 
+Items</font></a>.<br>
+Be careful : the file you import will be passed through the Midi-Mask. If you want 
+a full import, just make sure that all the flags of the Midi-Mask are set ! (refer to 
+the <a href="detailed_desc.html#edit"><font color="#008080">Edit</font></a> section).<br>
+Also, Aodix will import the PPQN setting from the file. Do not change it.</font></p>
+<p><b><font face="Verdana" size="2">2.2. case 2. begin recording from scratch</font></b><font face="Verdana" size="2"><br>
+First decide of the PPQN value (<a href="detailed_desc.html#audiomaster"><font color="#008080">Audio master</font></a>). 
+It is not recommended that you change it in the middle of the progress of your 
+project.<br>
+Default is 192. And we<b> strongly recommend </b>that<b> </b>you leave it to <b>
+192</b> !<br>
+This is a setting for advanced users, and is intended to increase/decrease midi 
+precision.</font></p>
+<p><font face="Verdana" size="2">Set project's Time Signature (<a href="detailed_desc.html#audiomaster"><font color="#008080">Audio 
+Master</font></a>). The most used signature is 4:4.</font></p>
+<p><font face="Verdana" size="2">Set project's Tempo (<a href="detailed_desc.html#audiomaster"><font color="#008080">Audio 
+Master</font></a>). If you will only use one tempo for the whole project, then 
+you just need to set it once. But, if you will be changing it within the 
+project, then you will need to set it and to record it as automation, at the 
+beginning of the tune, and whenever it is intended to change (read
+<a href="detailed_desc.html#midiccvsautomation"><font color="#008080">Note 2</font></a> 
+in the VST Parameters section).</font></p>
+<p><font face="Verdana" size="2">Now, let's set quantize value (<a href="detailed_desc.html#edit"><font color="#008080">Edit</font></a> 
+section). Use the default <b>16th</b> setting, or any other adapted to your 
+project. You may change this setting whenever you want. Sometimes when recording 
+you may like to set it to &quot;free&quot;. The quantize setting only acts as a grid to 
+which inputted events stick.<br>
+<br>
+When composing your tracks, you will usually switch between these 
+operating modes (<a href="detailed_desc.html#audiomaster"><font color="#008080">Audio 
+Master</font></a>) :<br>
+<br>
+<b><u>With REC on :<br>
+</u><br>
+<u>Live on+ Play : </u>
+</b>traditional &quot;online&quot; mode where you watch timeline scrolling and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; record at the 
+transport cursor position.<b><u><br>
+<br>
+Live off + Play :</u></b> 
+special offline mode in which you record at any position you want (static)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; meanwhile the 
+song is playing/looping at transport position somewhere<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+else. It means that the transport cursor and the edit cursor are no longer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+the same cursor.<b><u><br>
+<br>
+STOP (live on or off):</u></b> 
+offline mode with transport stopped. It's the classical editing 
+mode for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; programming (typing in notes).</font></p>
+<p><font face="Verdana" size="2">Press &quot;loop&quot; if you wish to play and record a loop inside the pattern.<br>
+<br>
+Switch the &quot;Over&quot; button off (<a href="detailed_desc.html#edit"><font color="#008080">Edit</font></a> 
+section) if you wish to record more than one event 
+at the same time (like chords). Read about other buttons in the (<a href="detailed_desc.html#edit"><font color="#008080">Edit</font></a> 
+section). We recommend you leave &quot;Step&quot; on, in the beginning. Then you may find 
+it useful to remove it.</font></p>
+<p><b><font face="Verdana"><a name="arrange">3. Step 3 : Arranging Project</a></font></b></p>
+<p><font face="Verdana" size="2"><b><a name="recordnotes">3.1 Record, type-in notes</a> 
+and arrange</b><u><br>
+</u><br>
+Record your tracks by combining all possibilities (online/offline, play/stop, 
+step on/off, etc).<br>
+<br>
+Use your midi keyboard and your PC keyboard.<br>
+If operating with PC keyboard, you may find changing the &quot;Pre-release&quot; setting 
+useful when programming a track.<br>
+This setting is the value (in midi points) by which the event will be shortened. 
+It has no effect on events incoming from a midi keyboard.</font></p>
+<p><font face="Verdana" size="2">For arranging, you need to read carefully all 
+the <a href="detailed_desc.html#sequencer"><font color="#008080">Sequencer 
+section</font></a>.<br>
+<br>
+You may find it useful to select a block and copy/paste it. For instance, for drum programming, you 
+will probably worry about one measure, then replicate it to all following 
+measures. Afterwards, you would modify some events (move/resize) of some 
+measures. Moving and resizing objects are quantize-free operations, because they are 
+intended for &quot;humanized&quot; results.</font></p>
+<p><font face="Verdana" size="2">You may also use the special event &quot;jump&quot;  
+(key 1). This event allows you to jump over the area defined but the &quot;jump&quot; 
+object (which is resizable). This is useful if you wish to shorten a measure.<br>
+<br>
+Read more in the Detailed Interface Documentation, Sequencer section :<br>
+<a href="detailed_desc.html#sequencer"><font color="#008080">Sequencer</font></a><font color="#008080"><br>
+</font>
+<a href="detailed_desc.html#s1"><font color="#008080">Sequencer : Track Gadgets</font></a><font color="#008080"><br>
+</font>
+<a href="detailed_desc.html#s2"><font color="#008080">Sequencer : Cues and Markers</font></a><font color="#008080"><br>
+</font>
+<a href="detailed_desc.html#s3"><font color="#008080">Sequencer : Mouse operating modes</font></a><font color="#008080"><br>
+</font>
+<a href="detailed_desc.html#s4"><font color="#008080">Sequencer : Browsing</font></a><font color="#008080"><br>
+</font>
+<a href="detailed_desc.html#s5"><font color="#008080">Sequencer : Pattern Arrangement</font></a><font color="#008080"><br>
+</font>
+<a href="detailed_desc.html#s6"><font color="#008080">Sequencer : Event Syntaxes</font></a></font></p>
+<p><font face="Verdana" size="2">Save your project several times while 
+composing (<a href="detailed_desc.html#menuitems"><font color="#008080">Menu 
+Items</font></a>). Some VST plug-ins can generate instability and crash, even though they are very 
+good and professional.</font></p>
+<p><font face="Verdana" size="2">When you achieve something consistent, you can think of modulating some parameters 
+(volumes, filter cut-offs etc..).</font></p>
+<p><font face="Verdana" size="2"><b><a name="tweakparameters">3.2 Tweak parameters</a></b><u><br>
+</u><br>
+In order to tweak a plug-in's parameters, you may proceed using midi events if the 
+plug-in you are using supports midiCC (midi Continuous Controllers), or using 
+VST automation (supported by almost all plug-ins).<br>
+<br>
+Pros and cons of both methods :<br>
+<br>
+<u>MidiCC recording : </u>what you actually record is the midi event incoming 
+from your keyboard. So you need a midi keyboard for that. Then this midi event 
+is interpreted by the plug-in only if the plug-in supports midiCC. If this is 
+the case, the plug-in will not always allow you to map the knobs as you wish. But 
+if the plug-in allows it, then it uses some sort of internal matrix that you can 
+edit. What happens if the matrix is modified for another project ? What happens 
+if you play the tune on another computer which has the same plug-in but not same 
+matrix ? You may not be able to play your tune as it is intended. The only 
+advantage of this method is that it is not subject to audio driver latencies, 
+which in all cases is extremely low in Aodix.<br>
+=&gt; Record midiCC : just press REC and move the knobs and faders on your midi 
+keyboard. Of course, in <a href="detailed_desc.html#midimask">
+<font color="#008080">Midi Mask</font></a>, you must set the &quot;B&quot; flag.<br>
+<br>
+<u>VST automation :</u> first, unlike midiCC, you can record VST automation with 
+your midi keyboard and with your mouse !! Then, recorded VST automation events carry the accurate information of the 
+plug-in's parameter that is being modified. There is a subsystem in Aodix that 
+allows you to assign a physical knob/fader of a midi keyboard to a parameter 
+of your plug-in. Even though you change the assignments later, the recorded 
+automation events will have exactly the same meaning. In addition, unlike midiCC, 
+you may assign a physical knob/fader of your midi keyboard to one or many parameters 
+in one or many plug-ins at the same time.<br>
+=&gt; Record VST automation : first unset the &quot;B&quot; flag of the 
+<a href="detailed_desc.html#midimask"><font color="#008080">Midi Mask</font></a><font color="#008080">
+</font>to avoid midiCC interference. Then press AUT. Open the editor of the plug-in (interface) and move buttons with your 
+mouse. The movements are recorded. If you wish to assign a physical knob/fader 
+of your midi keyboard, refer to section : <a href="detailed_desc.html#vstparams">
+<font color="#008080">Interface Detailed Documentation - VST Parameters</font></a></font></p>
+<p><font face="Verdana" size="2"><b><a name="patterncalls">3.3 Use Pattern 
+Calls</a><br>
+<br>
+</b>Although you may write your project as one single sheet and ignore this feature, we suggest 
+you try it once you have good knowledge of Aodix operation.<br>
+<br>
+A pattern call is intended to allow you use part of a pattern as a single event 
+in another pattern.</font></p>
+<p><font face="Verdana" size="2">For instance, if you are working on pattern 00, 
+switch to pattern 01, and arrange a loop containing one measure of 
+drum/percussion events. If this measure does not begin at 000:0, then you will 
+need to create a <a href="detailed_desc.html#s2"><font color="#008080">marker</font></a><font color="#008080">
+</font>at the beginning of the measure.<br>
+Now return to pattern 00. Set &quot;Mode&quot; value to &quot;Pattern&quot; (<a href="detailed_desc.html#edit"><font color="#008080">Edit</font></a> 
+section). Press &quot;REC&quot; button.<br>
+Press any letter key on our PC keyboard. This will create a &quot;Pat&quot; event. You 
+will need to browse to the first parameter and replace it with the number of the 
+pattern that is being called (in our case, it's &quot;01&quot;). Then browse to the second 
+parameter and type the number of the marker from which you want to begin the 
+call (or &quot;00&quot; if the measure is located at 000:0). Then set the two last 
+parameters to scale the called events. You may move and resize the pattern call.<br>
+<br>
+Cues, jumps and Stop Marker from the called pattern are ignored 
+in a pattern call event.<br>
+Tempo changes from the called pattern are applied to global tempo.</font></p>
+<p><font face="Verdana" size="2">Read more about pattern calls in the
+<a href="detailed_desc.html#s6"><font color="#008080">Sequencer : Event Syntaxes 
+section</font></a><font color="#008080">.</font> You may create as many 
+areas to be called in a pattern as long as you have enough markers to define 
+their beginning point (point 000:0 and 255 markers you can place anywhere else).<br>
+<br>
+<b>Note 1:</b> the Start/End Cues and the Stop Marker that are part of a called 
+area are ignored in the pattern call.<br>
+<br>
+<b>Note 2 : </b>you may not use pattern calls recursively : if the area you are 
+calling contains itself a pattern call, the latter will be ignored.</font></p>
+<p><b><font face="Verdana"><a name="finishing">4. Step 4 : Mastering and Finishing project</a></font></b></p>
+<p><font face="Verdana" size="2">We recommend that you finish the arrangement 
+with a Stop Marker, wisely positioned some measures after your the event, 
+so that the audio stream can decay before stop.</font></p>
+<p><font face="Verdana" size="2">It is time to add some effects to your project 
+in the <a href="detailed_desc.html#vstlist"><font color="#008080">VST Instances 
+List</font></a>, like delays, reverbs, equalization, compression, and more...</font></p>
+<p><font face="Verdana" size="2">Add as many 
+effects as you need and wire them so as the finally converge to the Master 
+Output. <b>Do not create circular references</b>. 
+You may decrease the gain of a wire but clicking on the arrow and dragging the 
+slider down.<br>
+<br>
+Watch the CPU level (<a href="detailed_desc.html#audiomaster"><font color="#008080">Audio 
+Master</font></a>), since some plug-ins have high CPU load consumption.</font></p>
+<p><font face="Verdana" size="2">Before rendering, You should play the whole 
+song for mastering purpose. Add some mastering effects at the bottom of the 
+global routing scheme. You may use the &quot;Stardust&quot; plug-in supplied with Aodix.<br>
+<br>
+You may also find that it is wiser to chose and load mastering plug-ins at the 
+very beginning of a project. Keep this in mind for your next projects !</font></p>
+<p><font face="Verdana" size="2">Don't forget to save your work.</font></p>
+<p><b><font face="Verdana"><a name="bounce">5. Result : Rendering project</a></font></b></p>
+<p><font face="Verdana" size="2">Now it's time to write a file that you can 
+later convert/encode to another file format with your audio editing software.<br>
+<br>
+Use the &quot;File &gt; Bounce...&quot; menu item (refer to section 
+<a href="detailed_desc.html#menuitems"><font color="#008080">Menu Items</font></a>).<br>
+<br>
+If you choose to bounce Cue Range, then Aodix will render the loop within the 
+cues.<br>
+If not,<br>
+&nbsp;&nbsp;&nbsp; if there is no Stop Marker in the pattern, Aodix will not even 
+begin rendering your file.<br>
+&nbsp;&nbsp;&nbsp; if there is a Stop Marker, then Aodix will begin rendering 
+your file from position 000:0 and<br>
+&nbsp;&nbsp;&nbsp; will stop rendering when the Stop Marker is reached. You may 
+also stop prematurely by<br>
+&nbsp;&nbsp;&nbsp; clicking on &quot;Stop&quot;.</font></p>
+<p><font face="Verdana" size="2">The output file is a multi-channel 32-bit float 
+IEEE file or a set of mono-channel 32-bit float IEEE files (to chose, tick or 
+untick the &quot;Multifile&quot; checkbox).<br>
+Most audio editing applications import stereo (2-channel) 32-bit float IEEE 
+files. Other import any number of channels (for details, refer to section 
+<a href="detailed_desc.html#menuitems"><font color="#008080">Menu Items</font></a>).<br>
+.</font></p>
+<p><font face="Verdana" size="2">This format has been chosen because it doesn't 
+degrade the quality of Aodix processed data.</font></p>
+
+</body>
+
+</html>

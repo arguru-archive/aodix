@@ -1,0 +1,164 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Getting Started</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Verdana"><b>Getting started : a few steps to have 
+Aodix running</b></font><font face="Verdana" size="2"><br>
+<br>
+Before beginning to work with Aodix v4, please 
+make sure that you have the following items :</font></p>
+<p><font face="Verdana" size="2">- Aodix v4 properly installed<br>
+- at least one VST instrument, installed in a folder where you keep all your VST 
+plug-ins<br>
+&nbsp;&nbsp; (plug-ins may be stored in subfolders of this folder).<br>
+- audio card properly installed and running, with operational speakers, and ASIO 
+driver<br>
+&nbsp; (native or emulated).<br>
+- if you plan to use a midi keyboard, have it connected and turned on before 
+running Aodix.</font></p>
+<p><font face="Verdana" size="2">If the list is successfully checked, you can 
+now run Aodix v4 for the first time and have it properly configured.</font></p>
+<p><b><font face="Verdana" size="2"><br>
+Open Aodix</font></b></p>
+<p><font face="Verdana" size="2">Just click on the Aodix link in the start menu 
+folder item where it should be according to installation. Usually :<br>
+Start Menu &gt; Programs &gt; Arguru Software &gt; Aodix</font></p>
+<p><b><font face="Verdana" size="2"><a name="interface">Aodix v4 interface</a></font></b><font face="Verdana" size="2"><br>
+Here is a brief description of the interface. All items will be explained in 
+details in the <a href="detailed_desc.html"><font color="#008080">Interface Detailed Documentation</font></a> section.</font></p>
+<p><img border="0" src="images/aodixmain_desc.jpg" width="600" height="400"></p>
+<p><font face="Verdana" size="2"><b>The Interface has 9 sections and 4 menus :<br>
+</b><u><br>
+Sections :</u></font></p>
+<p><font face="Verdana" size="2"><u>Audio Master :</u> 
+transport controls, playing/recording/scrolling behaviors. 
+Playing Time and midi-point counters, CPU usage. Display of Block Size value. You can set the 
+following basic items : Tempo, Time Signature, PPQN.</font></p>
+<p><u><font face="Verdana" size="2">Sequencer Edit</font></u><font face="Verdana" size="2"><u>:</u> 
+Editing position counters. Total midi events counter. Quantize, midi channel, 
+octave reference and Midi Mask settings. Zoom, Velocity and Pre-release 
+settings. Note/Pattern Mode input. Select step-like 
+operation, Overwriting events on/off. Switch Sequencer/Routing views.</font></p>
+<p><font face="Verdana" size="2"><u>VST Instances:</u> load VST, select, mute 
+and bypass instance. Unload instance (delete), import/export programs and banks, 
+browse programs, open plug-in's native interface.</font></p>
+<p><font face="Verdana" size="2"><u>VST Parameters:</u> parameter list of the 
+plug-in loaded in the selected VST Instance. Tweak parameter, assign a physical 
+controller to a parameter. </font></p>
+<p><font face="Verdana" size="2"><u>Information :</u> displays information.</font></p>
+<p><font face="Verdana" size="2"><u>Vumeter:</u> Master Output pin multi-vumeter</font></p>
+<p><font face="Verdana" size="2"><u>Main view:</u> Main area displaying the 
+Sequencer (patterns) or the Routing view (Instances and Wires).</font></p>
+<p><u><font face="Verdana" size="2"><a name="menus">Menus :</a></font></u></p>
+<p><img border="0" src="images/aodixmenus.jpg" width="234" height="90"></p>
+<p><font face="Verdana" size="2"><u>File :</u> file operation (new, open, save, 
+import midi, bounce), configuration, exit.</font></p>
+<p><font face="Verdana" size="2"><u>Edit :</u> clipboard operations (cut, copy, 
+paste, select all, undo clipboard operation, quantize notes, interpolate values)</font></p>
+<p><font face="Verdana" size="2"><u>Help :</u> this help file, about Aodix...</font></p>
+<p>&nbsp;</p>
+<p><b><font face="Verdana" size="2"><a name="configure">1. First of all, to have Aodix 
+running, you must run the &quot;File &gt; Configuration&quot; Menu :</a></font></b></p>
+<p><font face="Verdana" size="2">Select &quot;Configuration&quot; in the &quot;File&quot; Menu, and click on
+VST Path 1 item. 
+If the path is not set, browse to the correct VST 
+folder path. Aodix will access to all 
+plug-ins in that folder, and subfolders recursively. So you may install your 
+plug-ins in different subfolders of that VST Dir. Aodix handles up to 4 folder 
+roots.<br>
+<br>
+</font><img border="0" src="images/config.jpg" width="404" height="349"></p>
+<p><b><font face="Verdana" size="2">2. Then, configure your ASIO driver :</font></b></p>
+<p><font face="Verdana" size="2">Just click on the &quot;Current Driver&quot; 
+gadget and select the 
+driver you want. Aodix supports ASIO only. If your soundcard manufacturer does not provide 
+ASIO drivers, you may use emulated ones (like ones installed by some audio or 
+video software, or the Free ASIO4ALL driver).<br>
+If a warning mentioning an ASIO error appears, please close it and disregard it. 
+This happens when you configure the current driver for the first time.</font></p>
+<p><b><font face="Verdana" size="2">3. Select your keyboard type and check the 
+&quot;Instance To Master Autolink&quot; option</font></b></p>
+<p><font face="Verdana" size="2">In the right pane of the configuration window :</font></p>
+<p><img border="0" src="images/config2.jpg" width="406" height="352"></p>
+<p><font face="Verdana" size="2">Select your keyboard type, so you get proper 
+keyboard operation.</font></p>
+<p><font face="Verdana" size="2">Check the &quot;Instance To Master Autolink&quot;&nbsp; 
+option so you may start easily. You may find it better not to select it when you 
+get used to Aodix.</font></p>
+<p><font face="Verdana" size="2">Then click on the &quot;Apply Changes&quot; button 
+(in the left pane).</font></p>
+<p><font face="Verdana" size="2">Reminder : if a warning mentioning an ASIO 
+error appears, please close it and disregard it. This happens when you configure 
+the current driver for the first time.</font></p>
+<p><b><font face="Verdana" size="2">4. Assign Master Output pins to audio 
+outputs</font></b></p>
+<p><font face="Verdana" size="2">Switch to the <a href="detailed_desc.html#routing">
+<font color="#008080">Routing view</font></a> : use the button 
+showing the name &quot;Sequencer&quot; in the &quot;Edit&quot; Section. The button will toggle to 
+&quot;Routing&quot;. </font></p>
+<p><img border="0" src="images/edit2.jpg" width="331" height="147"><font face="Verdana" size="2"><br>
+Locate the <a href="detailed_desc.html#r2">
+<font color="#008080">Master Output</font></a> object.</font></p>
+<p><img border="0" src="images/outputalone.jpg" width="341" height="151"></p>
+<p><font face="Verdana" size="2">Locate now the pins on the top of 
+that object. Some are blue, some are green. Click on the blue ones to check that they 
+are properly 
+assigned to an output. For 
+instance, if you have a two channel (Left, Right) audio card,  
+the pins are as follows :<br>
+audio Left , audio Right, audio Left, audio Right, audio Left, ... but sometimes 
+these outputs are not labeled as it should be (like in t he example below)...</font></p>
+<p><font face="Verdana" size="2"><br>
+</font><img border="0" src="images/output.jpg" width="295" height="193"></p>
+<p>&nbsp;</p>
+<p><b><font face="Verdana" size="2">5. <a name="loadvsti">Now what you need is a VST Instrument 
+to load</a><br>
+In &quot;VST Instances&quot; Section :</font></b></p>
+<p><font face="Verdana" size="2">Just click on any empty slot in the &quot;VST 
+Instances&quot; list, and 
+you will see a popup list that reflects the structure of you VST Dir. 
+Select an instrument from there.</font></p>
+<p><font face="Verdana" size="2">When the instrument is loaded, it will be 
+automatically connected to the master output, because the option &quot;Instance to 
+Master Autolink&quot; has been checked in the configuration window.</font></p>
+<p><font face="Verdana" size="2">Note : There is NO instrument provided with 
+Aodix V4. There are hundreds of free VST Instruments that you can get over the 
+internet. There are thousands you can purchase at a very reasonable price.<br>
+&nbsp;</font></p>
+<p><b><font face="Verdana" size="2">6. Make sure that the instrument plug-in 
+name appears in the &quot;VST Instances&quot; list, and that it is highlighted</font></b></p>
+<p><font face="Verdana" size="2">Begin typing on your PC keyboard or midi 
+keyboard, and your instrument begins producing sounds.<br>
+<br>
+If you use a midi keyboard with an on/off button, make sure that it has been turned 
+ON before Aodix is started.<br>
+<br>
+<br>
+<br>
+</font><b><font face="Verdana" size="2" color="#FF0000">Now that Aodix is properly 
+configured, please consult the <a href="operation.htm"><font color="#008080">
+Operation Guide</font></a> Section of this 
+help.</font></b></p>
+<p>&nbsp;</p>
+<p><a name="register"><b><font face="Verdana">Aodix Registration and Unlocking</font></b></a></p>
+<p><font face="Verdana" size="2">If you have purchased an Aodix License, we 
+thank you very much for your interest in Aodix, and for supporting us.<br>
+You don't need to unlock Aodix, you will receive a full version in your mailbox.<br>
+Keep this data 
+in a safe place, and don't spread it. This full version has been sent to you 
+personally.</font></p>
+<p><font face="Verdana" size="2">If you wish to purchase a license, please 
+browse to our website <a target="_blank" href="http://www.aodix.com">
+<font color="#008080">www.aodix.com</font></a> and check our Shop section.</font></p>
+<p><font face="Verdana" size="2">If you use the demo version of the software, 
+you will not be able to save your work.</font></p>
+
+</body>
+
+</html>
