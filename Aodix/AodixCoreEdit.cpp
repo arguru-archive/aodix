@@ -383,15 +383,18 @@ void CAodixCore::edit_interpolate(void)
 	SetCursor(hcursor_wait);
 
 	// space between interpolated events
-	int i_quantize=edit_get_quantization();
-	if(i_quantize<1)
+	int i_quantize;
+	if(edit_get_quantization()>1)
+		i_quantize=edit_get_quantization();
+	else
 		i_quantize=1;
 
 	// get block length
 	int const user_block_pos_len=user_block_pos_end-user_block_pos_sta;
+	int const user_block_trk_len=user_block_trk_end-user_block_trk_sta;
 
 	// range selected
-	if(user_block_pos_len>0)
+	if(user_block_pos_len>0 && user_block_trk_len>0)
 	{
 		// each selected track
 		for(int track=user_block_trk_sta;track<user_block_trk_end;track++)
