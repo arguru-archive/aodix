@@ -385,6 +385,7 @@ void CAodixCore::gui_command(HWND const hwnd,int const id)
 		gui_is_dirty=1;
 	}
 
+	// edit interpolate
 	if(id==ID_EDIT_INTERPOLATE)
 	{
 		edit_interpolate();
