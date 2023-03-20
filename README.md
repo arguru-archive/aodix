@@ -13,11 +13,3 @@ This repository will serve as an archive only. I plan to continue development of
 Aodix can be built using Visual Studio 2003 (run on Windows XP for best results). Instead of MSVC, Aodix was originally compiled with the [Intel C++ Compiler](https://en.wikipedia.org/wiki/Intel_C%2B%2B_Compiler). I wasn't able to find the correct version of this compiler used by Arguru; I used version 7.1.029 for the reconstruction, which produced similar but not identical binaries. MSVC can still be used as a substitute.
 
 This repository does not include the [ASIO SDK](https://www.steinberg.net/developers/) (version 2.0) or the VST SDK (version 2.3, no longer available), since they are proprietary.
-
-## Copyright
-
-Copyright 2007 Arguru Software.
-
-Developed by Juan Antonio Arguelles Rius and Zafer Kantar. Graphic design by Paul Merchant and Marc De Haar.
-
-Republished with permission.
